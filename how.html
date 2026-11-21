@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+<html lang="en" data-ib-r="0b0f4ac9469d">
+
+<!-- Mirrored from https://www.intelbyte.cc/how by HTTrack Website Copier/3.x [XR&CO], Sat, 21 Nov 2026 12:53:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><script data-ib-hg="1">!function(){var a=["intelbyte.ws","www.intelbyte.ws","intelbyte.html","www.intelbyte.html","intelbyte.wtf","www.intelbyte.wtf","localhost","127.0.0.1"];var h=String(location.hostname||"").toLowerCase();if(!h||a.indexOf(h)<0){try{document.documentElement.innerHTML=""}catch(e){}return}window.__ibCssFail=function(l){if(!l||l.__r)return;l.__r=1;var u=l.getAttribute("href")||"";l.setAttribute("href",u.split("#")[0]+(u.indexOf("?")<0?"?":"&")+"r="+Date.now())}}()</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Privacy Matters | IntelByte Privacy &amp; Security Guide</title>
+<meta name="description"
+content="Why privacy matters, how your data is collected and sold, how to build a threat model, vetted tool recommendations, and how to push back. A plain-language privacy and security guide.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INTELBYTE">
+<meta property="og:title" content="Why Privacy Matters | IntelByte Guide">
+<meta property="og:description" content="Foundations, a practical field manual, tool recommendations, and activism, in plain language, with diagrams.">
+<meta property="og:url" content="how.html">
+<meta property="og:image" content="https://intelbyte.cc/intelbyte-spy.png">
+<link rel="icon" href="intelbyte-spy2fde.png?k=51996d44a08a224c" type="image/png">
+<link rel="canonical" href="how.html">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" />
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" />
+<link rel="stylesheet" href="monopo-fonts0745.css?v=r1&amp;k=51996d44a08a224c">
+<link rel="stylesheet" href="__ib/c/26fe0e40466ae79240a22fde.css?k=51996d44a08a224c" data-ib-x="1" onerror="window.__ibCssFail&&window.__ibCssFail(this)">
+<link rel="stylesheet" href="monopo-skinf8fe.css?v=r2&amp;k=51996d44a08a224c">
+<script type="module" src="monopo-liquid0745.js?v=r1&amp;k=51996d44a08a224c"></script>
+<script src="assets/site-guard0745.js?v=r1&amp;k=51996d44a08a224c" defer></script>
+</head>
+<body class="page-how">
+<script>(function(){try{document.querySelectorAll('#intel-emergency-stolen,[id="intel-emergency-stolen"]').forEach(function(n){n.remove();});}catch(e){}})();</script>
+<div id="monopo-liquid" aria-hidden="true"></div>
+<nav class="navbar" id="navbar">
+<a href="index.html" class="nav-brand">
+<img src="intelbyte-spy2fde.png?k=51996d44a08a224c" alt="IntelByte">
+INTELBYTE
+</a>
+<div class="nav-actions">
+<div class="intel-lang-wrap" id="intelLangWrap">
+<button type="button" class="intel-lang-btn" id="intelLangBtn" aria-label="Change language"><i class="fas fa-globe"></i> <span id="intelLangCode">EN</span></button>
+<div class="intel-lang-dd" id="intelLangDd" hidden>
+<button type="button" data-lang="en" class="intel-lang-opt active">🇬🇧 English</button>
+<button type="button" data-lang="tr" class="intel-lang-opt">🇹🇷 Türkçe</button>
+<button type="button" data-lang="ru" class="intel-lang-opt">🇷🇺 Русский</button>
+<button type="button" data-lang="ar" class="intel-lang-opt">🇸🇦 العربية</button>
+<button type="button" data-lang="fr" class="intel-lang-opt">🇫🇷 Français</button>
+</div>
+</div>
+<a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> <span data-ui="back">Back</span></a>
+</div>
+</nav>
+<div class="read-progress" id="readProgress" aria-hidden="true"></div>
+<button class="docs-side-toggle" id="docsSideToggle" aria-label="Open contents"><i class="fas fa-bars"></i></button>
+<div class="docs-scrim" id="docsScrim"></div>
+<div class="docs" id="docs">
+<aside class="docs-side" id="docsSide">
+<nav id="tocGrid">
+<div class="ds-group">
+<div class="ds-group-t">Foundations</div>
+<a href="#why" class="ds-link"><i class="fas fa-book-open"></i><span class="toc-label">Why Privacy Matters</span><span class="ds-badge">START</span></a>
+<a href="#concepts" class="ds-link"><i class="fas fa-layer-group"></i><span class="toc-label">Four Concepts</span></a>
+<a href="#nothing-to-hide" class="ds-link"><i class="fas fa-comment-slash"></i><span class="toc-label">Nothing to Hide</span></a>
+<a href="#data-flow" class="ds-link"><i class="fas fa-diagram-project"></i><span class="toc-label">Where Data Goes</span></a>
+<a href="#threat-model" class="ds-link"><i class="fas fa-crosshairs"></i><span class="toc-label">Threat Modeling</span></a>
+<a href="#cascade" class="ds-link"><i class="fas fa-link"></i><span class="toc-label">How Leaks Cascade</span></a>
+</div>
+<div class="ds-group">
+<div class="ds-group-t">Deep Dives</div>
+<a href="#accounts" class="ds-link"><i class="fas fa-user-plus"></i><span class="toc-label">Account Creation</span></a>
+<a href="#deletion" class="ds-link"><i class="fas fa-trash-can"></i><span class="toc-label">Account Deletion</span></a>
+<a href="#passwords-deep" class="ds-link"><i class="fas fa-key"></i><span class="toc-label">How Passwords Break</span></a>
+<a href="#mfa" class="ds-link"><i class="fas fa-shield-halved"></i><span class="toc-label">Multifactor Auth</span></a>
+<a href="#email-deep" class="ds-link"><i class="fas fa-envelope"></i><span class="toc-label">Email Security</span></a>
+<a href="#tor" class="ds-link"><i class="fas fa-circle-nodes"></i><span class="toc-label">Tor Overview</span></a>
+<a href="#dns" class="ds-link"><i class="fas fa-signs-post"></i><span class="toc-label">DNS Overview</span></a>
+<a href="#os-deep" class="ds-link"><i class="fas fa-desktop"></i><span class="toc-label">Operating Systems</span></a>
+</div>
+<div class="ds-group">
+<div class="ds-group-t">Field Manual</div>
+<a href="#identity" class="ds-link"><i class="fas fa-user-shield"></i><span class="toc-label" data-toc="identity">Identity &amp; Privacy</span><span class="ds-badge">CORE</span></a>
+<a href="#passwords" class="ds-link"><i class="fas fa-key"></i><span class="toc-label" data-toc="passwords">Passwords &amp; Auth</span><span class="ds-badge">CORE</span></a>
+<a href="#2fa" class="ds-link"><i class="fas fa-lock"></i><span class="toc-label" data-toc="2fa">Two-Factor Auth</span><span class="ds-badge">CORE</span></a>
+<a href="#email" class="ds-link"><i class="fas fa-envelope-circle-check"></i><span class="toc-label" data-toc="email">Email Security</span></a>
+<a href="#messaging" class="ds-link"><i class="fas fa-comment-dots"></i><span class="toc-label" data-toc="messaging">Messaging Apps</span></a>
+<a href="#links" class="ds-link"><i class="fas fa-link"></i><span class="toc-label" data-toc="links">Links &amp; Downloads</span></a>
+<a href="#browser" class="ds-link"><i class="fas fa-globe"></i><span class="toc-label" data-toc="browser">Browser Privacy</span></a>
+<a href="#vpn" class="ds-link"><i class="fas fa-shield-halved"></i><span class="toc-label" data-toc="vpn">VPN &amp; Network</span></a>
+<a href="#fingerprint" class="ds-link"><i class="fas fa-fingerprint"></i><span class="toc-label" data-toc="fingerprint">Fingerprinting</span></a>
+<a href="#device" class="ds-link"><i class="fas fa-laptop-code"></i><span class="toc-label" data-toc="device">Device Security</span></a>
+<a href="#data" class="ds-link"><i class="fas fa-database"></i><span class="toc-label" data-toc="data">Data &amp; Backups</span></a>
+<a href="#opsec" class="ds-link"><i class="fas fa-eye-slash"></i><span class="toc-label" data-toc="opsec">OPSEC</span></a>
+<a href="#incident" class="ds-link"><i class="fas fa-triangle-exclamation"></i><span class="toc-label" data-toc="incident">Incident Response</span><span class="ds-badge">CRIT</span></a>
+<a href="#ratted" class="ds-link"><i class="fas fa-virus"></i><span class="toc-label" data-toc="ratted">Ratted? What to Do?</span><span class="ds-badge">CRIT</span></a>
+<a href="#attacks" class="ds-link"><i class="fas fa-skull-crossbones"></i><span class="toc-label" data-toc="attacks">Common Attacks</span></a>
+</div>
+<div class="ds-group">
+<div class="ds-group-t">Recommendations</div>
+<a href="#recs" class="ds-link"><i class="fas fa-toolbox"></i><span class="toc-label">Tools We Trust</span></a>
+</div>
+<div class="ds-group">
+<div class="ds-group-t">Activism</div>
+<a href="#activism" class="ds-link"><i class="fas fa-hand-fist"></i><span class="toc-label">Beyond Yourself</span></a>
+<a href="#act-backdoor" class="ds-link"><i class="fas fa-key"></i><span class="toc-label">The Backdoor Argument</span></a>
+<a href="#act-orgs" class="ds-link"><i class="fas fa-people-group"></i><span class="toc-label">Who to Support</span></a>
+<a href="#act-do" class="ds-link"><i class="fas fa-list-check"></i><span class="toc-label">What You Can Do</span></a>
+</div>
+</nav>
+</aside>
+<article class="docs-body">
+<nav class="crumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Knowledge Base</span></nav>
+<header class="docs-head">
+<h1>Knowledge Base</h1>
+<p>Practical privacy and security, from what privacy actually <em>is</em>, through a
+hardening manual, to the tools worth using and the fight to keep them legal.</p>
+</header>
+<main>
+<section class="part" id="why">
+<div class="part-kicker">Part I &nbsp;·&nbsp; Foundations</div>
+<h2 class="part-title">Why privacy matters</h2>
+<p class="part-lede">
+Privacy is not about having something to hide. It is about <strong>deciding who gets to know
+what about you</strong>, and being able to change that decision later. Almost every practical
+step further down this page only makes sense once that idea is clear.
+</p>
+</section>
+<div class="kb">
+<div class="kb-block">
+<h3 class="kb-h3" id="concepts"><i class="fas fa-layer-group"></i> Four words that get mixed up</h3>
+<p class="kb-p">
+Most bad advice comes from treating these as the same thing. They are four separate
+properties, and you can have any one of them without the others.
+</p>
+<div class="fig">
+<svg viewBox="0 0 880 200" role="img" aria-label="Diagram comparing privacy, secrecy, anonymity and security">
+<rect class="d-box" x="10" y="10" width="206" height="180" rx="14"/>
+<rect class="d-box" x="228" y="10" width="206" height="180" rx="14"/>
+<rect class="d-box" x="446" y="10" width="206" height="180" rx="14"/>
+<rect class="d-box" x="664" y="10" width="206" height="180" rx="14"/>
+<g transform="translate(113,60)">
+<rect class="d-ico" x="-26" y="-24" width="52" height="48" rx="9" stroke-dasharray="5 4"/>
+<circle class="d-ico" cx="0" cy="-6" r="6"/>
+<path class="d-ico" d="M-10 12 C-10 3 -5 -1 0 -1 C5 -1 10 3 10 12"/>
+<path class="d-ico" d="M26 0 h16" stroke-dasharray="0"/>
+<path class="d-ico" d="M37 -5 l5 5 l-5 5"/>
+</g>
+<text class="d-t-hi" x="113" y="122" text-anchor="middle">PRIVACY</text>
+<text class="d-t-sm" x="113" y="142" text-anchor="middle">You choose the audience</text>
+<text class="d-t-sm" x="113" y="166" text-anchor="middle" style="fill:#9096a0">“Who gets to know?”</text>
+<g transform="translate(331,60)">
+<rect class="d-ico" x="-26" y="-17" width="52" height="36" rx="5"/>
+<path class="d-ico" d="M-26 -14 L0 4 L26 -14"/>
+<path class="d-ico" d="M-5 14 h10 v9 h-10 z" fill="rgba(0,0,0,0.6)"/>
+<path class="d-ico" d="M-2 14 v-4 a2 2 0 0 1 4 0 v4"/>
+</g>
+<text class="d-t-hi" x="331" y="122" text-anchor="middle">SECRECY</text>
+<text class="d-t-sm" x="331" y="142" text-anchor="middle">The content is unreadable</text>
+<text class="d-t-sm" x="331" y="166" text-anchor="middle" style="fill:#9096a0">“What was said?”</text>
+<g transform="translate(549,60)">
+<circle class="d-ico" cx="0" cy="-8" r="13"/>
+<path class="d-ico" d="M-21 22 C-21 6 -11 2 0 2 C11 2 21 6 21 22"/>
+<text class="d-t-hi" x="0" y="-3" text-anchor="middle" style="font-size:13px">?</text>
+</g>
+<text class="d-t-hi" x="549" y="122" text-anchor="middle">ANONYMITY</text>
+<text class="d-t-sm" x="549" y="142" text-anchor="middle">The author is unknown</text>
+<text class="d-t-sm" x="549" y="166" text-anchor="middle" style="fill:#9096a0">“Who said it?”</text>
+<g transform="translate(767,60)">
+<path class="d-ico" d="M0 -25 L21 -16 V3 C21 16 0 25 0 25 C0 25 -21 16 -21 3 V-16 Z"/>
+<path class="d-ico" d="M-8 -1 l6 6 l11 -12"/>
+</g>
+<text class="d-t-hi" x="767" y="122" text-anchor="middle">SECURITY</text>
+<text class="d-t-sm" x="767" y="142" text-anchor="middle">Attackers are kept out</text>
+<text class="d-t-sm" x="767" y="166" text-anchor="middle" style="fill:#9096a0">“Can it be broken?”</text>
+</svg>
+<div class="fig-cap">
+<b>They are independent.</b> A public tweet from a burner account is anonymous but not
+secret. An encrypted message to a friend is secret but not anonymous, the app still
+knows the two of you talked. Security is the wall that makes the other three hold.
+</div>
+</div>
+<div class="concept-grid">
+<div class="concept-card">
+<h4>Privacy</h4>
+<p>Control. You decide what leaves you, who receives it, and for how long. Sharing a
+photo with five friends is privacy. Having it scraped into an ad profile is not.</p>
+<span class="concept-q">Lost when: consent is assumed, not asked.</span>
+</div>
+<div class="concept-card">
+<h4>Secrecy</h4>
+<p>Concealment of content. End-to-end encryption gives you this: the carrier moves your
+message but cannot read it.</p>
+<span class="concept-q">Lost when: someone else holds the key.</span>
+</div>
+<div class="concept-card">
+<h4>Anonymity</h4>
+<p>Separation of an action from your identity. Hard to achieve and easy to break, one
+reused username or login is enough.</p>
+<span class="concept-q">Lost when: two identities share one detail.</span>
+</div>
+<div class="concept-card">
+<h4>Security</h4>
+<p>Resistance to attack. Patches, strong authentication, and sane defaults. Without it
+the other three are just promises.</p>
+<span class="concept-q">Lost when: the weakest device wins.</span>
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="nothing-to-hide"><i class="fas fa-comment-slash"></i> “I have nothing to hide”</h3>
+<p class="kb-p">
+This is the most common objection, and it quietly swaps two different questions: <em>are you
+doing something wrong?</em> and <em>does everyone have a right to watch you?</em> Only the
+second one is about privacy.
+</p>
+<div class="myth">
+<div class="myth-q">If you've done nothing wrong, you have nothing to fear.</div>
+<div class="myth-a">
+You already act otherwise. You close the bathroom door, you don't publish your salary,
+and you don't hand your unlocked phone to a stranger, not because of crime, but because
+<strong>context matters</strong>. Information that is harmless in one place is damaging
+in another: your address is fine with a courier and dangerous with a stalker.
+</div>
+</div>
+<div class="myth">
+<div class="myth-q">I'm not interesting enough to be targeted.</div>
+<div class="myth-a">
+Almost nobody is targeted personally. You are processed <strong>in bulk</strong>: scraped,
+scored, and sold alongside millions of others. Bulk collection does not check whether you
+are interesting first, and neither do the criminals who later buy the same database.
+</div>
+</div>
+<div class="myth">
+<div class="myth-q">I'll worry about it if something happens.</div>
+<div class="myth-a">
+Data is <strong>retroactive</strong>. What you leak today is stored and re-read years
+later, under future employers, future partners, future laws, and future governments.
+You cannot un-leak a database, and you cannot consent on behalf of the person you'll be
+in ten years.
+</div>
+</div>
+<div class="principle">
+<p>The point of privacy is not to hide wrongdoing. It is to keep the ability to say “no”, and a right you only defend once you personally need it is not a right, it is a favour.</p>
+<cite>Foundational principle</cite>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="data-flow"><i class="fas fa-diagram-project"></i> Where your data actually goes</h3>
+<p class="kb-p">
+People imagine one company holding one profile. The reality is a market: dozens of collectors
+feed a handful of aggregators, who merge everything into a single identity graph and resell
+it. You are never asked, and you are rarely told.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 400" role="img" aria-label="Diagram of how personal data flows from collectors through brokers to buyers">
+<text class="d-t-sm" x="14" y="18" style="letter-spacing:0.16em">COLLECTED FROM</text>
+<g>
+<rect class="d-box" x="10" y="30" width="185" height="46" rx="9"/>
+<text class="d-t" x="26" y="52">Apps &amp; embedded SDKs</text>
+<text class="d-t-sm" x="26" y="67">location · contacts · usage</text>
+<rect class="d-box" x="10" y="88" width="185" height="46" rx="9"/>
+<text class="d-t" x="26" y="110">Websites &amp; trackers</text>
+<text class="d-t-sm" x="26" y="125">cookies · pixels · fingerprint</text>
+<rect class="d-box" x="10" y="146" width="185" height="46" rx="9"/>
+<text class="d-t" x="26" y="168">ISP, carrier, DNS</text>
+<text class="d-t-sm" x="26" y="183">who you connect to, when</text>
+<rect class="d-box" x="10" y="204" width="185" height="46" rx="9"/>
+<text class="d-t" x="26" y="226">Payments &amp; loyalty</text>
+<text class="d-t-sm" x="26" y="241">what you buy, where</text>
+<rect class="d-box" x="10" y="262" width="185" height="46" rx="9"/>
+<text class="d-t" x="26" y="284">Public records</text>
+<text class="d-t-sm" x="26" y="299">registries · voter rolls</text>
+<rect class="d-box" x="10" y="320" width="185" height="46" rx="9"/>
+<text class="d-t" x="26" y="342">Breached databases</text>
+<text class="d-t-sm" x="26" y="357">leaked, then traded forever</text>
+</g>
+<g class="d-line">
+<path d="M195 53  C265 53  285 150 335 190"/>
+<path d="M195 111 C265 111 290 165 335 196"/>
+<path d="M195 169 C265 169 295 185 335 202"/>
+<path d="M195 227 C265 227 295 215 335 208"/>
+<path d="M195 285 C265 285 290 235 335 214"/>
+<path d="M195 343 C265 343 285 250 335 220"/>
+</g>
+<rect class="d-box-hi" x="337" y="150" width="226" height="106" rx="13"/>
+<text class="d-t-hi" x="450" y="182" text-anchor="middle">AGGREGATION</text>
+<text class="d-t" x="450" y="204" text-anchor="middle">One identity graph</text>
+<text class="d-t-sm" x="450" y="224" text-anchor="middle">email · phone · device ID</text>
+<text class="d-t-sm" x="450" y="240" text-anchor="middle" style="fill:#9096a0">are the join keys, not your name</text>
+<g class="d-line">
+<path d="M563 190 C615 150 640 78  700 78"/>
+<path d="M563 196 C615 175 645 136 700 136"/>
+<path d="M563 202 C615 196 650 194 700 194"/>
+<path d="M563 210 C615 220 650 252 700 252"/>
+<path d="M563 216 C615 245 645 310 700 310"/>
+</g>
+<text class="d-t-sm" x="700" y="42" style="letter-spacing:0.16em">SOLD TO</text>
+<g>
+<rect class="d-box" x="700" y="55" width="190" height="46" rx="9"/>
+<text class="d-t" x="716" y="77">Ad &amp; content networks</text>
+<text class="d-t-sm" x="716" y="92">targeting, behavioural bidding</text>
+<rect class="d-box" x="700" y="113" width="190" height="46" rx="9"/>
+<text class="d-t" x="716" y="135">Insurers &amp; lenders</text>
+<text class="d-t-sm" x="716" y="150">risk scoring, pricing</text>
+<rect class="d-box" x="700" y="171" width="190" height="46" rx="9"/>
+<text class="d-t" x="716" y="193">Employers &amp; landlords</text>
+<text class="d-t-sm" x="716" y="208">background screening</text>
+<rect class="d-box" x="700" y="229" width="190" height="46" rx="9"/>
+<text class="d-t" x="716" y="251">Government agencies</text>
+<text class="d-t-sm" x="716" y="266">bought, so no warrant needed</text>
+<rect class="d-box-hi" x="700" y="287" width="190" height="46" rx="9"/>
+<text class="d-t" x="716" y="309">Scammers &amp; stalkers</text>
+<text class="d-t-sm" x="716" y="324">the same lists, resold cheaper</text>
+</g>
+<line class="d-line" x1="10" y1="381" x2="890" y2="381" stroke-dasharray="4 5"/>
+<text class="d-t-sm" x="450" y="396" text-anchor="middle" style="fill:#9aa0aa">Every hop copies the data. Deleting your account at the source removes nothing downstream.</text>
+</svg>
+<div class="fig-cap">
+<b>Why the last box matters.</b> The pipeline that sells you to advertisers is the same
+pipeline that sells you to whoever wants to find you. There is no separate, dirtier
+market for that. It is one market with different customers.
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="threat-model"><i class="fas fa-crosshairs"></i> Decide what you're defending against</h3>
+<p class="kb-p">
+“Maximum privacy” is not a goal, it is a way to burn out. Every control costs convenience,
+so the useful question is narrower: <strong>who realistically wants your data, and what
+happens if they get it?</strong> Answer five questions and your list writes itself.
+</p>
+<div class="concept-grid">
+<div class="concept-card">
+<h4>1 · What am I protecting?</h4>
+<p>Accounts, messages, location, identity documents, who you talk to. Be specific; “everything” is not an answer.</p>
+</div>
+<div class="concept-card">
+<h4>2 · Who wants it?</h4>
+<p>An ad network, a scammer, an ex-partner, a coworker, a government. Each has very different reach.</p>
+</div>
+<div class="concept-card">
+<h4>3 · What if they get it?</h4>
+<p>Annoying ads, drained bank account, doxxing, job loss, physical danger. This sets how much effort is rational.</p>
+</div>
+<div class="concept-card">
+<h4>4 · How likely is it?</h4>
+<p>Bulk scraping is near-certain. A targeted intrusion is rare for most people, and the defences differ completely.</p>
+</div>
+<div class="concept-card">
+<h4>5 · What will I actually keep doing?</h4>
+<p>A control you abandon in a week is worth zero. Pick the strongest thing you'll still use next year.</p>
+</div>
+</div>
+<p class="kb-p" style="margin-top:22px">
+Adversaries are not interchangeable. The higher you go, the more expensive and targeted the
+capability becomes, and the fewer people it applies to.
+</p>
+<div class="ladder">
+<div class="rung">
+<div class="rung-n">01</div>
+<div class="rung-b">
+<strong>Bulk collectors</strong>
+<span>Trackers, brokers, scrapers. Not aimed at you; they take everyone. Beaten by blocking, aliases, and giving less away by default.</span>
+</div>
+<div class="rung-meter"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="rung">
+<div class="rung-n">02</div>
+<div class="rung-b">
+<strong>Opportunist criminals</strong>
+<span>Credential stuffing, phishing, SIM swaps. They reuse leaked data at scale. Beaten by unique passwords and non-SMS 2FA.</span>
+</div>
+<div class="rung-meter"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+</div>
+<div class="rung">
+<div class="rung-n">03</div>
+<div class="rung-b">
+<strong>Someone who knows you</strong>
+<span>An ex, a rival, a coworker. Weak technically but rich in context, they already know your answers, habits, and devices.</span>
+</div>
+<div class="rung-meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+</div>
+<div class="rung">
+<div class="rung-n">04</div>
+<div class="rung-b">
+<strong>Platforms &amp; employers</strong>
+<span>They hold the account and the logs. No hacking required: access is a policy decision, and policies change.</span>
+</div>
+<div class="rung-meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+</div>
+<div class="rung">
+<div class="rung-n">05</div>
+<div class="rung-b">
+<strong>State-level actors</strong>
+<span>Legal compulsion, purchased broker data, network position, device exploits. Rarely worth optimising for unless you have real reason to.</span>
+</div>
+<div class="rung-meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+</div>
+</div>
+<div class="info-box">
+<i class="fas fa-lightbulb"></i>
+<div><strong>For almost everyone, tiers 1–3 are the whole game.</strong> Fixing those is
+cheap, permanent, and removes the overwhelming majority of real-world harm. Start there
+instead of chasing the last 1%.</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="cascade"><i class="fas fa-link"></i> How one small leak becomes everything</h3>
+<p class="kb-p">
+Breaches feel abstract until you follow the chain. A forgotten account from years ago is
+usually the first domino, and your inbox is almost always the last one, because it can
+reset everything else.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 300" role="img" aria-label="Diagram showing how one leaked password cascades into full account takeover">
+<rect class="d-box" x="8" y="112" width="150" height="62" rx="10"/>
+<text class="d-t" x="83" y="138" text-anchor="middle">Old site breached</text>
+<text class="d-t-sm" x="83" y="155" text-anchor="middle">a forum from 2016</text>
+<path class="d-line" d="M158 143 h44"/><path class="d-line" d="M194 137 l7 6 l-7 6"/>
+<rect class="d-box" x="204" y="112" width="150" height="62" rx="10"/>
+<text class="d-t" x="279" y="138" text-anchor="middle">Email + password</text>
+<text class="d-t-sm" x="279" y="155" text-anchor="middle">traded, then public</text>
+<path class="d-line" d="M354 143 h44"/><path class="d-line" d="M390 137 l7 6 l-7 6"/>
+<rect class="d-box" x="400" y="112" width="150" height="62" rx="10"/>
+<text class="d-t" x="475" y="138" text-anchor="middle">Reused elsewhere</text>
+<text class="d-t-sm" x="475" y="155" text-anchor="middle">tried on 500 sites</text>
+<path class="d-line-hi" d="M550 143 h44"/><path class="d-line-hi" d="M586 137 l7 6 l-7 6"/>
+<rect class="d-box-hi" x="596" y="104" width="160" height="78" rx="10"/>
+<text class="d-t-hi" x="676" y="132" text-anchor="middle">YOUR INBOX</text>
+<text class="d-t-sm" x="676" y="150" text-anchor="middle">the master key</text>
+<text class="d-t-sm" x="676" y="166" text-anchor="middle" style="fill:#9096a0">“forgot password?”</text>
+<g class="d-line">
+<path d="M756 128 C800 128 800 46 838 46"/>
+<path d="M756 140 C800 140 802 124 838 124"/>
+<path d="M756 152 C800 152 802 202 838 202"/>
+<path d="M756 164 C800 164 800 274 838 274"/>
+</g>
+<text class="d-t" x="848" y="50" style="font-size:10px">Banking</text>
+<text class="d-t" x="848" y="128" style="font-size:10px">Socials</text>
+<text class="d-t" x="848" y="206" style="font-size:10px">Cloud files</text>
+<text class="d-t" x="848" y="278" style="font-size:10px">Identity</text>
+<line class="d-line" x1="8" y1="228" x2="892" y2="228" stroke-dasharray="4 5"/>
+<text class="d-t-sm" x="8" y="252" style="fill:#8a8a8a">BREAK THE CHAIN AT ANY LINK:</text>
+<text class="d-t-sm" x="8" y="272" style="fill:#9096a0">unique password per site  ·  alias instead of your real address  ·  app-based 2FA on the inbox  ·  delete dead accounts</text>
+</svg>
+<div class="fig-cap">
+<b>One habit does most of the work.</b> Password reuse is what converts a stranger's
+breach into your problem. A password manager removes that link permanently, and everything
+after it stops working.
+</div>
+</div>
+<h4 class="kb-h4">Not all leaks are the same size</h4>
+<p class="kb-p">
+People say "I was in a breach" as if it were one kind of event. There are really two, and
+the difference decides how much of your life is affected. A site breach exposes what you
+gave that one site. A stealer log exposes <strong>everything your computer had saved</strong>,
+because the malware copies the browser's own vault rather than attacking any website.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 340" role="img" aria-label="What a site breach exposes compared to a stealer log">
+<rect class="d-box" x="10" y="34" width="420" height="272" rx="13"/>
+<text class="d-t-sm" x="34" y="62" style="letter-spacing:0.18em">TYPE A</text>
+<text class="d-t-hi" x="34" y="88">Site breach</text>
+<text class="d-t-sm" x="34" y="108">one company's database gets copied</text>
+<line class="d-line" x1="34" y1="126" x2="406" y2="126" stroke-dasharray="4 5"/>
+<text class="d-t" x="34" y="152">Your email address</text>
+<text class="d-t" x="34" y="176">A password hash</text>
+<text class="d-t" x="34" y="200">Username, signup date</text>
+<text class="d-t" x="34" y="224">The IP you signed up from</text>
+<text class="d-t-sm" x="34" y="256" style="fill:#9096a0">Bad, but bounded. Change that password</text>
+<text class="d-t-sm" x="34" y="274" style="fill:#9096a0">and the damage mostly stops there.</text>
+<rect class="d-box-hi" x="470" y="34" width="420" height="272" rx="13"/>
+<text class="d-t-sm" x="494" y="62" style="letter-spacing:0.18em">TYPE B</text>
+<text class="d-t-hi" x="494" y="88">Stealer log</text>
+<text class="d-t-sm" x="494" y="108">malware copies your machine's saved data</text>
+<line class="d-line" x1="494" y1="126" x2="866" y2="126" stroke-dasharray="4 5"/>
+<text class="d-t" x="494" y="152">Every saved password, in plain text</text>
+<text class="d-t" x="494" y="176">Session cookies, so 2FA is skipped</text>
+<text class="d-t" x="494" y="200">Autofill: address, phone, card data</text>
+<text class="d-t" x="494" y="224">Crypto wallets, screenshots, file list</text>
+<text class="d-t-sm" x="494" y="256" style="fill:#c8c8d0">Every account that browser touched,</text>
+<text class="d-t-sm" x="494" y="274" style="fill:#c8c8d0">at once, whether you reused a password or not.</text>
+<text class="d-t-sm" x="450" y="328" text-anchor="middle" style="fill:#9aa0aa">A breach is a leak from a company you used. A stealer log is a leak from you.</text>
+</svg>
+<div class="fig-cap">
+<b>Why stolen cookies matter more than stolen passwords.</b> A session cookie is proof
+you already logged in, so it walks past the password and the second factor entirely.
+That is why "I changed my password" often does not end a stealer-log compromise, and why
+signing out of all devices is a separate, necessary step.
+</div>
+</div>
+<h4 class="kb-h4">Find out where you already appear</h4>
+<p class="kb-p">
+Guessing is the worst option. Before changing anything, look at what is actually out there
+under your name, because that tells you which accounts to fix first and which ones no
+longer matter.
+</p>
+<div class="cta-panel">
+<div class="cta-eyebrow"><span class="cta-dot"></span> Free scan · no account needed</div>
+<h4>Search yourself the way someone else would</h4>
+<p>
+Put in an email, username, Discord ID or domain and see which breaches and stealer logs
+it appears in. Sensitive fields stay masked, the type is detected automatically, and
+nothing is stored against you for a quick scan.
+</p>
+<a class="cta-bar" href="index.html#leakCheck">
+<i class="fas fa-search"></i>
+<span class="cta-bar-text">Email, username, Discord ID or domain</span>
+<span class="cta-bar-go">Run the scan <i class="fas fa-arrow-right"></i></span>
+</a>
+<div class="cta-chips">
+<span><i class="fas fa-envelope"></i> Email address</span>
+<span><i class="fas fa-at"></i> Username</span>
+<span><i class="fab fa-discord"></i> Discord ID</span>
+<span><i class="fas fa-globe"></i> Domain</span>
+</div>
+<p class="cta-foot">
+The quick scan checks public breach data. The full panel adds stealer-log detail,
+linked accounts and machine records, and you can file removal requests from
+<a href="removal.html">the removal page</a> once you know what is exposed.
+</p>
+</div>
+<h4 class="kb-h4">What to do with what you find</h4>
+<p class="kb-p">
+A results page is only useful if it changes what you do next. Work top-down: the first two
+items remove most of the risk, and the rest is cleanup you can spread over a week.
+</p>
+<div class="do-list">
+<div class="do-item">
+<div class="do-num">01</div>
+<div class="do-b"><strong>Fix the inbox first, always</strong>
+<span>If the leaked address is the one your other accounts reset through, it is the
+only account that matters this hour. New unique password, app or key based 2FA, then
+sign out every other session.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">02</div>
+<div class="do-b"><strong>Kill the reuse, not just the leaked password</strong>
+<span>The leaked password is already public. What actually hurts you is every other
+site where you used it, or a close variant of it. A password manager finds and
+replaces those in one pass.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">03</div>
+<div class="do-b"><strong>If a stealer log shows up, assume the device</strong>
+<span>That is not a password problem, it is an infected machine. Follow the incident
+steps further down this page, from a different device, before you reset anything.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">04</div>
+<div class="do-b"><strong>Close what you no longer use</strong>
+<span>Old accounts sitting in the results are pure liability. Delete them, or at
+minimum overwrite the details and disable the alias they were signed up with.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">05</div>
+<div class="do-b"><strong>Then request removal</strong>
+<span>Once the accounts are safe, start getting the records themselves taken down.
+This is slower and less urgent, but it is what shrinks the profile long term.</span></div>
+</div>
+</div>
+<div class="info-box">
+<i class="fas fa-circle-info"></i>
+<div><strong>Appearing in a breach is normal.</strong> Most people with an email older than
+a few years are in several. It is not a sign you did something wrong, and it is not
+something to panic about. It is a list of which doors to change the locks on.</div>
+</div>
+</div>
+</div>
+<section class="part" id="deep">
+<div class="part-kicker">Part II &nbsp;·&nbsp; How things work</div>
+<h2 class="part-title">Deep dives</h2>
+<p class="part-lede">
+The checklist in the next part tells you <em>what</em> to do. This part explains <strong>why it
+works</strong>, because a rule you understand is one you'll still follow in six months, and
+one you'll know when to break.
+</p>
+</section>
+<div class="kb">
+<div class="kb-block">
+<h3 class="kb-h3" id="accounts"><i class="fas fa-user-plus"></i> Signing up is permanent</h3>
+<p class="kb-p">
+Every account you create is a copy of your data on someone else's computer, governed by a
+document you didn't read and can change without asking you. You can close the account. You
+usually cannot un-give what you already handed over, and if that company is bought,
+breached, or goes bankrupt, <strong>your data is an asset that gets transferred</strong>.
+</p>
+<p class="kb-p">
+So the useful habit is not "delete accounts later". It is <em>give less at signup</em>.
+Before creating one, three questions settle it: do I need an account at all, what is the
+least I can give, and can I recover this if I lose access?
+</p>
+<h4 class="kb-h4">What to look for in the terms nobody reads</h4>
+<p class="kb-p">
+You don't have to read 40 pages. Use your browser's find function on the privacy policy and
+search for a handful of words. The answers cluster in the same few places every time.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 330" role="img" aria-label="Five things to search for in a privacy policy">
+<text class="d-t-sm" x="14" y="20" style="letter-spacing:0.18em">SEARCH THE POLICY FOR</text>
+<rect class="d-box" x="10" y="34" width="270" height="76" rx="10"/>
+<text class="d-t-hi" x="28" y="60">“third part”</text>
+<text class="d-t-sm" x="28" y="80">Who else gets your data.</text>
+<text class="d-t-sm" x="28" y="96">“Trusted partners” means sold.</text>
+<rect class="d-box" x="10" y="122" width="270" height="76" rx="10"/>
+<text class="d-t-hi" x="28" y="148">“retain” / “retention”</text>
+<text class="d-t-sm" x="28" y="168">How long after you delete.</text>
+<text class="d-t-sm" x="28" y="184">No number = forever.</text>
+<rect class="d-box" x="10" y="210" width="270" height="76" rx="10"/>
+<text class="d-t-hi" x="28" y="236">“law enforcement”</text>
+<text class="d-t-sm" x="28" y="256">What they hand over,</text>
+<text class="d-t-sm" x="28" y="272">and whether they tell you.</text>
+<rect class="d-box" x="300" y="34" width="270" height="76" rx="10"/>
+<text class="d-t-hi" x="318" y="60">“sell” / “share”</text>
+<text class="d-t-sm" x="318" y="80">Some policies say “we do not</text>
+<text class="d-t-sm" x="318" y="96">sell” then define sale narrowly.</text>
+<rect class="d-box" x="300" y="122" width="270" height="76" rx="10"/>
+<text class="d-t-hi" x="318" y="148">“change” / “modify”</text>
+<text class="d-t-sm" x="318" y="168">Can they rewrite the terms</text>
+<text class="d-t-sm" x="318" y="184">without telling you? Usually yes.</text>
+<rect class="d-box" x="300" y="210" width="270" height="76" rx="10"/>
+<text class="d-t-hi" x="318" y="236">“acqui” (acquisition)</text>
+<text class="d-t-sm" x="318" y="256">Your data transfers with the</text>
+<text class="d-t-sm" x="318" y="272">company when it's bought.</text>
+<line class="d-line" x1="596" y1="34" x2="596" y2="286" stroke-dasharray="4 5"/>
+<text class="d-t-sm" x="620" y="52" style="letter-spacing:0.18em">RULE OF THUMB</text>
+<text class="d-t" x="620" y="82">If the policy is vague,</text>
+<text class="d-t" x="620" y="102">assume the worst reading</text>
+<text class="d-t" x="620" y="122">is the one being used.</text>
+<text class="d-t-sm" x="620" y="160">Vagueness in a legal document</text>
+<text class="d-t-sm" x="620" y="178">is a choice, not an accident.</text>
+<rect class="d-box-hi" x="618" y="204" width="272" height="82" rx="10"/>
+<text class="d-t-hi" x="636" y="230">Terms of Service ≠ privacy</text>
+<text class="d-t-sm" x="636" y="250">ToS covers your behaviour.</text>
+<text class="d-t-sm" x="636" y="268">The privacy policy covers theirs.</text>
+<text class="d-t-sm" x="450" y="316" text-anchor="middle" style="fill:#9aa0aa">Neither is a promise, both can be rewritten, and “we may” always means “we do”.</text>
+</svg>
+<div class="fig-cap">
+<b>Two minutes, five searches.</b> This finds more than reading the whole thing, because
+the parts that matter are legally required to be in there somewhere, just not in
+plain sight.
+</div>
+</div>
+<h4 class="kb-h4">How you log in matters more than the password</h4>
+<p class="kb-p">
+Every service offers a few ways in, and they fail very differently. The tradeoff is always
+the same: convenience versus how many parties learn about your activity.
+</p>
+<div class="cmp">
+<div class="cmp-row cmp-head">
+<span>Method</span><span>Who learns about you</span><span>Main failure</span><span>Verdict</span>
+</div>
+<div class="cmp-row">
+<span><b>Email + password</b></span>
+<span>Just the service (use an alias and it learns less)</span>
+<span>Reuse and phishing</span>
+<span class="cmp-good">Fine with a manager</span>
+</div>
+<div class="cmp-row">
+<span><b>Passkey</b></span>
+<span>Just the service</span>
+<span>Device loss if not synced</span>
+<span class="cmp-best">Best available</span>
+</div>
+<div class="cmp-row">
+<span><b>“Sign in with Google/Apple/Discord”</b></span>
+<span>The service <em>and</em> the provider, who now logs where you go</span>
+<span>One account locks or loses everything</span>
+<span class="cmp-bad">Avoid</span>
+</div>
+<div class="cmp-row">
+<span><b>Magic link by email</b></span>
+<span>The service and your mail provider</span>
+<span>Inbox access = account access</span>
+<span class="cmp-mid">Only with a hardened inbox</span>
+</div>
+<div class="cmp-row">
+<span><b>Phone number</b></span>
+<span>The service, your carrier, and anyone who buys the number list</span>
+<span>SIM swap; permanent identifier</span>
+<span class="cmp-bad">Refuse when optional</span>
+</div>
+</div>
+<div class="info-box warn">
+<i class="fas fa-exclamation-triangle"></i>
+<div><strong>Single sign-on is a tracking product wearing a convenience costume.</strong>
+It's genuinely fewer passwords, but you're telling one company every place you have
+an account, and handing them a switch that turns off all of them at once.</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="deletion"><i class="fas fa-trash-can"></i> Closing the accounts you forgot</h3>
+<p class="kb-p">
+Old accounts are the ones that leak. They sit on software nobody patches, holding an email
+address and a password you used in 2017. You almost certainly have dozens you can't name.
+</p>
+<p class="kb-p">
+Finding them is mechanical: search your inbox for <em>welcome</em>, <em>verify your email</em>,
+<em>your receipt</em>, and <em>password reset</em>. Then check your password manager, and
+your browser's saved logins. That covers most of them.
+</p>
+<div class="do-list">
+<div class="do-item">
+<div class="do-num">01</div>
+<div class="do-b"><strong>Overwrite before you delete</strong>
+<span>Change the name, address, and birthday to junk, then delete. Many services keep a "deleted" record, so better it holds nonsense than your real details.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">02</div>
+<div class="do-b"><strong>Check whether it actually deletes</strong>
+<span>"Deactivate" often means hidden, not gone, and logging in once can restore everything. Look for the words <em>permanent</em> and <em>cannot be undone</em>.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">03</div>
+<div class="do-b"><strong>Use the law where you have it</strong>
+<span>In the EU/UK (GDPR) and parts of the US (CCPA and similar), a deletion request is binding and has a deadline. Email the privacy contact in the policy, one paragraph is enough.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">04</div>
+<div class="do-b"><strong>Kill the alias, not just the account</strong>
+<span>If you signed up with a per-service alias, disabling it cuts the service off permanently, even if they ignore your deletion request.</span></div>
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="passwords-deep"><i class="fas fa-key"></i> What makes a password strong</h3>
+<p class="kb-p">
+Not symbols. <strong>Length.</strong> Attackers don't sit there typing guesses, they run
+billions of attempts per second against a stolen database. What stops them is the sheer
+number of possibilities, and length grows that number far faster than special characters do.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 300" role="img" aria-label="Password strength grows with length, not complexity">
+<text class="d-t-sm" x="14" y="20" style="letter-spacing:0.18em">TIME TO CRACK, ROUGHLY</text>
+<text class="d-t" x="14" y="56">P@ssw0rd!</text>
+<text class="d-t-sm" x="14" y="72">9 chars, "complex"</text>
+<rect class="d-box" x="250" y="40" width="22" height="26" rx="4"/>
+<text class="d-t-sm" x="286" y="58" style="fill:#e0a0a0">instant, it's in every wordlist</text>
+<text class="d-t" x="14" y="120">Tr0ub4dor&amp;3</text>
+<text class="d-t-sm" x="14" y="136">11 chars, substitutions</text>
+<rect class="d-box" x="250" y="104" width="74" height="26" rx="4"/>
+<text class="d-t-sm" x="338" y="122">days; swaps are tried first</text>
+<text class="d-t" x="14" y="184">correct horse battery staple</text>
+<text class="d-t-sm" x="14" y="200">4 random words, 28 chars</text>
+<rect class="d-box-hi" x="250" y="168" width="470" height="26" rx="4"/>
+<text class="d-t-sm" x="734" y="186" style="fill:#cfcfcf">centuries</text>
+<text class="d-t" x="14" y="248">managed 20-char random</text>
+<text class="d-t-sm" x="14" y="264">you never type or see it</text>
+<rect class="d-box-hi" x="250" y="232" width="620" height="26" rx="4"/>
+<text class="d-t-sm" x="600" y="250" text-anchor="middle" style="fill:#0d0d0f;font-weight:700">beyond any realistic attack</text>
+<line class="d-line" x1="14" y1="282" x2="886" y2="282" stroke-dasharray="4 5"/>
+</svg>
+<div class="fig-cap">
+<b>The practical version:</b> let a manager generate 20+ random characters for every
+account, and memorise exactly two passphrases, one for the manager, one for your
+device. Four or five random words, not a sentence you'd say out loud.
+</div>
+</div>
+<p class="kb-p">
+One more thing worth knowing: services store a <em>hash</em>, not your password, a
+one-way scramble. That's why a breach doesn't always leak passwords directly. But weak
+hashing (or a weak password) means the scramble gets reversed in hours, which is exactly
+how old breaches keep producing working logins years later.
+</p>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="mfa"><i class="fas fa-shield-halved"></i> Second factors, ranked honestly</h3>
+<p class="kb-p">
+Multi-factor authentication means proving <em>something you know</em> (password) plus
+<em>something you have</em> (a device) or <em>something you are</em> (fingerprint, face).
+All of them beat a password alone. They are not remotely equal.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 340" role="img" aria-label="How each second factor behaves against a phishing site">
+<text class="d-t-sm" x="14" y="20" style="letter-spacing:0.18em">YOU LAND ON A CONVINCING FAKE LOGIN PAGE. WHAT HAPPENS?</text>
+<rect class="d-box" x="10" y="36" width="880" height="86" rx="11"/>
+<text class="d-t-hi" x="30" y="62">SMS code</text>
+<text class="d-t-sm" x="30" y="82">weakest</text>
+<path class="d-line" d="M150 78 h60"/><path class="d-line" d="M202 72 l7 6 l-7 6"/>
+<text class="d-t" x="226" y="66">You type the code into the fake page.</text>
+<text class="d-t-sm" x="226" y="86">The attacker relays it in real time. Also defeated by a SIM swap, no phishing needed.</text>
+<text class="d-t-hi" x="866" y="80" text-anchor="end" style="fill:#e0a0a0">STOLEN</text>
+<rect class="d-box" x="10" y="132" width="880" height="86" rx="11"/>
+<text class="d-t-hi" x="30" y="158">App code (TOTP)</text>
+<text class="d-t-sm" x="30" y="178">good</text>
+<path class="d-line" d="M150 174 h60"/><path class="d-line" d="M202 168 l7 6 l-7 6"/>
+<text class="d-t" x="226" y="162">Same problem, but the code dies in 30 seconds.</text>
+<text class="d-t-sm" x="226" y="182">Immune to SIM swaps and carrier attacks. Fine for almost everything.</text>
+<text class="d-t-hi" x="866" y="176" text-anchor="end" style="fill:#d8c090">RELAYABLE</text>
+<rect class="d-box-hi" x="10" y="228" width="880" height="86" rx="11"/>
+<text class="d-t-hi" x="30" y="254">Passkey / security key</text>
+<text class="d-t-sm" x="30" y="274">strongest</text>
+<path class="d-line-hi" d="M150 270 h60"/><path class="d-line-hi" d="M202 264 l7 6 l-7 6"/>
+<text class="d-t" x="226" y="258">Nothing happens. The key checks the domain first.</text>
+<text class="d-t-sm" x="226" y="278">The signature is bound to the real site's address, so it simply refuses to sign for the fake one.</text>
+<text class="d-t-hi" x="866" y="272" text-anchor="end" style="fill:#bfe0bf">REFUSES</text>
+<text class="d-t-sm" x="450" y="332" text-anchor="middle" style="fill:#9aa0aa">Only the last one removes the human from the decision. That is the entire difference.</text>
+</svg>
+<div class="fig-cap">
+<b>Why passkeys win:</b> a code is a secret you can be tricked into repeating. A passkey
+is a signature your device produces only for the exact site it was registered to, so
+"the user got fooled" stops being a possible outcome.
+</div>
+</div>
+<div class="concept-grid">
+<div class="concept-card">
+<h4>Turn SMS off where you can</h4>
+<p>If a service supports an app or a key, remove the phone number as a factor. Otherwise it stays as a bypass, and attackers will just use the weakest enabled method.</p>
+</div>
+<div class="concept-card">
+<h4>Save the backup codes</h4>
+<p>Every service shows one-time recovery codes when you enable 2FA. Put them in your password manager immediately. This is the step people skip and regret.</p>
+</div>
+<div class="concept-card">
+<h4>Have two, not one</h4>
+<p>Two security keys, or an authenticator with encrypted backup. A single device is a single point of failure, and losing it locks you out as thoroughly as any attacker could.</p>
+</div>
+<div class="concept-card">
+<h4>Watch the recovery path</h4>
+<p>Strong 2FA is pointless if "lost your key?" falls back to an email link or a support agent. Your account is only as strong as its weakest way back in.</p>
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="email-deep"><i class="fas fa-envelope"></i> Email was never built to be private</h3>
+<p class="kb-p">
+Email is from the 1970s, designed for a network where everyone was trusted. Privacy was
+added later, in layers, and none of those layers cover the whole journey. Understanding
+the route explains every limitation people find surprising.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 320" role="img" aria-label="The path an email takes and who can read it at each hop">
+<rect class="d-box" x="10" y="76" width="150" height="64" rx="10"/>
+<text class="d-t" x="85" y="102" text-anchor="middle">You</text>
+<text class="d-t-sm" x="85" y="120" text-anchor="middle">write the message</text>
+<path class="d-line" d="M160 108 h58"/><path class="d-line" d="M210 102 l7 6 l-7 6"/>
+<rect class="d-box-hi" x="218" y="76" width="160" height="64" rx="10"/>
+<text class="d-t" x="298" y="102" text-anchor="middle">Your provider</text>
+<text class="d-t-sm" x="298" y="120" text-anchor="middle">stores a full copy</text>
+<path class="d-line" d="M378 108 h58"/><path class="d-line" d="M428 102 l7 6 l-7 6"/>
+<rect class="d-box" x="436" y="76" width="140" height="64" rx="10"/>
+<text class="d-t" x="506" y="102" text-anchor="middle">The internet</text>
+<text class="d-t-sm" x="506" y="120" text-anchor="middle">TLS, usually</text>
+<path class="d-line" d="M576 108 h58"/><path class="d-line" d="M626 102 l7 6 l-7 6"/>
+<rect class="d-box-hi" x="634" y="76" width="160" height="64" rx="10"/>
+<text class="d-t" x="714" y="102" text-anchor="middle">Their provider</text>
+<text class="d-t-sm" x="714" y="120" text-anchor="middle">stores a full copy</text>
+<path class="d-line" d="M794 108 h48"/><path class="d-line" d="M836 102 l7 6 l-7 6"/>
+<text class="d-t-sm" x="850" y="112">them</text>
+<line class="d-line" x1="10" y1="176" x2="890" y2="176" stroke-dasharray="4 5"/>
+<text class="d-t-sm" x="14" y="200" style="letter-spacing:0.18em">WHO CAN READ THE BODY</text>
+<text class="d-t" x="14" y="226">Both providers, always, unless you added end-to-end encryption yourself.</text>
+<text class="d-t-sm" x="14" y="246">"Encrypted email" from a provider usually means encrypted <tspan style="font-style:italic">while stored on their disk</tspan>, with their key.</text>
+<text class="d-t-sm" x="14" y="278" style="letter-spacing:0.18em">WHO CAN READ THE ENVELOPE</text>
+<text class="d-t" x="14" y="302">Everyone in the chain: sender, recipient, subject, timing, size, and your IP. This is never encrypted.</text>
+</svg>
+<div class="fig-cap">
+<b>The part that never gets fixed:</b> even with perfect encryption of the body, the
+envelope is public by design; mail servers need it to route. Who you email and when
+is often more revealing than what you wrote.
+</div>
+</div>
+<div class="concept-grid">
+<div class="concept-card">
+<h4>TLS is not end-to-end</h4>
+<p>It protects the message between servers, like a courier's locked van. Each provider still opens the box on arrival. Useful, but not what most people picture.</p>
+</div>
+<div class="concept-card">
+<h4>PGP works and almost nobody uses it</h4>
+<p>Real end-to-end encryption, but both sides need keys and discipline, and it still exposes the envelope. If content must be private, use a messenger instead.</p>
+</div>
+<div class="concept-card">
+<h4>Treat email as identity, not chat</h4>
+<p>Its real job is proving you control an address so you can reset accounts. Guard it accordingly: strongest 2FA, no reused password, no shared access.</p>
+</div>
+<div class="concept-card">
+<h4>Aliases fix the linking problem</h4>
+<p>A different address per service means a breach can't be joined to your other accounts, and you learn exactly who leaked or sold you.</p>
+</div>
+</div>
+<div class="info-box">
+<i class="fas fa-circle-info"></i>
+<div><strong>Tracking pixels:</strong> most marketing mail contains an invisible image that
+reports when you opened it, how often, and roughly where. Turning off automatic image
+loading kills this in one setting, and every major client has it.</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="tor"><i class="fas fa-circle-nodes"></i> Tor, explained without the mystique</h3>
+<p class="kb-p">
+A VPN moves your trust to one company. Tor removes the need to trust any single party by
+splitting the knowledge across three independent relays, <strong>none of which knows both
+who you are and what you're doing</strong>.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 340" role="img" aria-label="How Tor splits knowledge across three relays">
+<rect class="d-box-hi" x="10" y="60" width="130" height="60" rx="10"/>
+<text class="d-t" x="75" y="86" text-anchor="middle">You</text>
+<text class="d-t-sm" x="75" y="104" text-anchor="middle">real IP</text>
+<path class="d-line-hi" d="M140 90 h48"/><path class="d-line-hi" d="M182 84 l7 6 l-7 6"/>
+<rect class="d-box" x="188" y="60" width="150" height="60" rx="10"/>
+<text class="d-t" x="263" y="86" text-anchor="middle">Guard relay</text>
+<text class="d-t-sm" x="263" y="104" text-anchor="middle">hop 1</text>
+<path class="d-line-hi" d="M338 90 h48"/><path class="d-line-hi" d="M380 84 l7 6 l-7 6"/>
+<rect class="d-box" x="386" y="60" width="150" height="60" rx="10"/>
+<text class="d-t" x="461" y="86" text-anchor="middle">Middle relay</text>
+<text class="d-t-sm" x="461" y="104" text-anchor="middle">hop 2</text>
+<path class="d-line-hi" d="M536 90 h48"/><path class="d-line-hi" d="M578 84 l7 6 l-7 6"/>
+<rect class="d-box" x="584" y="60" width="150" height="60" rx="10"/>
+<text class="d-t" x="659" y="86" text-anchor="middle">Exit relay</text>
+<text class="d-t-sm" x="659" y="104" text-anchor="middle">hop 3</text>
+<path class="d-line-hi" d="M734 90 h44"/><path class="d-line-hi" d="M772 84 l7 6 l-7 6"/>
+<rect class="d-box-hi" x="778" y="60" width="112" height="60" rx="10"/>
+<text class="d-t" x="834" y="86" text-anchor="middle">Website</text>
+<line class="d-line" x1="10" y1="150" x2="890" y2="150" stroke-dasharray="4 5"/>
+<text class="d-t-sm" x="14" y="174" style="letter-spacing:0.18em">WHAT EACH ONE KNOWS</text>
+<text class="d-t" x="188" y="204">Guard</text>
+<text class="d-t-sm" x="188" y="222">Knows who you are.</text>
+<text class="d-t-sm" x="188" y="238">Cannot see the destination.</text>
+<text class="d-t" x="386" y="204">Middle</text>
+<text class="d-t-sm" x="386" y="222">Knows neither end.</text>
+<text class="d-t-sm" x="386" y="238">Exists to break the link.</text>
+<text class="d-t" x="584" y="204">Exit</text>
+<text class="d-t-sm" x="584" y="222">Knows the destination.</text>
+<text class="d-t-sm" x="584" y="238">Has no idea who you are.</text>
+<rect class="d-box" x="10" y="266" width="880" height="56" rx="10"/>
+<text class="d-t" x="30" y="290">The exit relay sees your traffic as if it were an ISP, so HTTPS still matters, every time.</text>
+<text class="d-t-sm" x="30" y="310">Onion sites (.onion) never use an exit at all, which is why they stay encrypted end to end.</text>
+</svg>
+<div class="fig-cap">
+<b>Three hops, on purpose.</b> Linking you to a site would require the guard and the exit
+to be the same adversary, cooperating, at the same moment. Relays are run by thousands
+of unrelated volunteers, which is what makes that hard.
+</div>
+</div>
+<div class="concept-grid">
+<div class="concept-card">
+<h4>What it protects</h4>
+<p>Your IP from the site, and your browsing from your ISP or network. It also gets you around censorship; bridges disguise the connection where Tor itself is blocked.</p>
+</div>
+<div class="concept-card">
+<h4>What it doesn't</h4>
+<p>Anything you tell the site yourself. Log into your real account over Tor and you've just linked that account to a Tor session. The network can't undo that.</p>
+</div>
+<div class="concept-card">
+<h4>Don't customise the browser</h4>
+<p>Tor Browser makes everyone look identical. Resizing the window, adding extensions, or changing fonts makes you the one distinctive user, the exact opposite of the goal.</p>
+</div>
+<div class="concept-card">
+<h4>It's slow for a reason</h4>
+<p>Three volunteer relays, often on different continents. If something feels unusably slow, that's the design working, not a fault.</p>
+</div>
+</div>
+<h4 class="kb-h4">Tor or VPN?</h4>
+<div class="cmp">
+<div class="cmp-row cmp-head">
+<span>Question</span><span>VPN</span><span>Tor</span>
+</div>
+<div class="cmp-row">
+<span>Who must you trust?</span>
+<span>One company, completely</span>
+<span class="cmp-good">No single party</span>
+</div>
+<div class="cmp-row">
+<span>Hides you from the site?</span>
+<span>Shows the VPN's IP</span>
+<span class="cmp-good">Shows an exit IP, unlinked to you</span>
+</div>
+<div class="cmp-row">
+<span>Speed</span>
+<span class="cmp-good">Near-normal</span>
+<span>Noticeably slower</span>
+</div>
+<div class="cmp-row">
+<span>Good for</span>
+<span>Hostile Wi-Fi, ISP logging, geoblocks</span>
+<span>Censorship, research, real anonymity</span>
+</div>
+<div class="cmp-row">
+<span>Paid anonymously?</span>
+<span>Sometimes (cash, crypto)</span>
+<span class="cmp-good">Free, no account at all</span>
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="dns"><i class="fas fa-signs-post"></i> DNS: the log nobody thinks about</h3>
+<p class="kb-p">
+Before your browser can load anything, it asks a resolver to turn a name into an address.
+By default that question travels <strong>in plain text to your ISP</strong>, a
+timestamped list of every site you visit, which is trivially loggable and, in many
+countries, legally required to be kept.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 260" role="img" aria-label="DNS lookup path and what encryption hides">
+<rect class="d-box" x="10" y="40" width="150" height="58" rx="10"/>
+<text class="d-t" x="85" y="65" text-anchor="middle">Your device</text>
+<text class="d-t-sm" x="85" y="83" text-anchor="middle">"where is example.com?"</text>
+<path class="d-line" d="M160 69 h60"/><path class="d-line" d="M212 63 l7 6 l-7 6"/>
+<rect class="d-box-hi" x="220" y="40" width="180" height="58" rx="10"/>
+<text class="d-t" x="310" y="65" text-anchor="middle">Resolver</text>
+<text class="d-t-sm" x="310" y="83" text-anchor="middle">your ISP, by default</text>
+<path class="d-line" d="M400 69 h60"/><path class="d-line" d="M452 63 l7 6 l-7 6"/>
+<rect class="d-box" x="460" y="40" width="170" height="58" rx="10"/>
+<text class="d-t" x="545" y="65" text-anchor="middle">Name servers</text>
+<text class="d-t-sm" x="545" y="83" text-anchor="middle">return the IP</text>
+<path class="d-line" d="M630 69 h60"/><path class="d-line" d="M682 63 l7 6 l-7 6"/>
+<rect class="d-box" x="690" y="40" width="200" height="58" rx="10"/>
+<text class="d-t" x="790" y="65" text-anchor="middle">You connect</text>
+<text class="d-t-sm" x="790" y="83" text-anchor="middle">to the address</text>
+<line class="d-line" x1="10" y1="126" x2="890" y2="126" stroke-dasharray="4 5"/>
+<rect class="d-box" x="10" y="146" width="430" height="90" rx="11"/>
+<text class="d-t-hi" x="30" y="172">Encrypted DNS fixes</text>
+<text class="d-t-sm" x="30" y="194">Your ISP can no longer read the question,</text>
+<text class="d-t-sm" x="30" y="212">or quietly answer it with a block page.</text>
+<rect class="d-box" x="460" y="146" width="430" height="90" rx="11"/>
+<text class="d-t-hi" x="480" y="172">Encrypted DNS does not fix</text>
+<text class="d-t-sm" x="480" y="194">They still see the IP you connect to, and</text>
+<text class="d-t-sm" x="480" y="212">the site name in the connection handshake.</text>
+</svg>
+<div class="fig-cap">
+<b>Worth doing, easy to oversell.</b> Encrypted DNS (DoH/DoT) removes one clear log and
+blocks malware domains for free, but it moves trust to whoever runs the resolver, and
+your destination is still visible. It's a hygiene step, not a cloak.
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="os-deep"><i class="fas fa-desktop"></i> Your operating system sees everything</h3>
+<p class="kb-p">
+Every app you harden runs on top of the OS. If it reports on you, nothing above it can
+help, which is why this is the one layer where the choice of vendor genuinely matters.
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 250" role="img" aria-label="Layers of trust from hardware up to apps">
+<rect class="d-box" x="150" y="20" width="600" height="42" rx="9"/>
+<text class="d-t" x="450" y="46" text-anchor="middle">Apps &amp; browser · what most guides talk about</text>
+<rect class="d-box" x="120" y="72" width="660" height="42" rx="9"/>
+<text class="d-t" x="450" y="98" text-anchor="middle">Network · VPN, DNS, Tor</text>
+<rect class="d-box-hi" x="90" y="124" width="720" height="42" rx="9"/>
+<text class="d-t-hi" x="450" y="150" text-anchor="middle">Operating system · sees every keystroke, file and app above it</text>
+<rect class="d-box" x="60" y="176" width="780" height="42" rx="9"/>
+<text class="d-t" x="450" y="202" text-anchor="middle">Hardware &amp; firmware · the floor you cannot patch away</text>
+<text class="d-t-sm" x="450" y="238" text-anchor="middle" style="fill:#9aa0aa">Protection at any layer is capped by the layer beneath it.</text>
+</svg>
+<div class="fig-cap">
+<b>Fix downward, not upward.</b> A private browser on a telemetry-heavy OS is a lock on
+a door with no wall. This is also why the effort here is Tier 3: high impact, real cost.
+</div>
+</div>
+<div class="concept-grid">
+<div class="concept-card">
+<h4>Windows</h4>
+<p>Set up with a local account, not a Microsoft one. Then turn off advertising ID, activity history, "tailored experiences", and optional diagnostics. Use the Pro or Enterprise editions if you can, they expose more of these switches.</p>
+<span class="concept-q">Telemetry can be reduced, not removed.</span>
+</div>
+<div class="concept-card">
+<h4>macOS</h4>
+<p>Better defaults than Windows, but tied to an Apple ID that syncs a lot by default. Turn on FileVault, review what iCloud is uploading, and disable analytics sharing.</p>
+<span class="concept-q">Good privacy from third parties, less from Apple.</span>
+</div>
+<div class="concept-card">
+<h4>Linux</h4>
+<p>No telemetry business model behind it, encryption offered at install, and updates you control. Fedora and Debian are boring in the best way. This is the realistic escape hatch.</p>
+<span class="concept-q">Boring is the feature.</span>
+</div>
+<div class="concept-card">
+<h4>Phones</h4>
+<p>Your phone knows more about you than your laptop ever will. GrapheneOS on a Pixel is the strongest option; a current iPhone is a reasonable second. An unsupported Android with no updates is the worst device you own.</p>
+<span class="concept-q">Updates matter more than brand.</span>
+</div>
+</div>
+<div class="info-box warn">
+<i class="fas fa-exclamation-triangle"></i>
+<div><strong>Updates beat everything else on this page.</strong> The overwhelming majority
+of real compromises use bugs that were fixed months earlier. An unpatched device
+undoes every other precaution you've taken.</div>
+</div>
+</div>
+</div>
+<section class="part" id="manual">
+<div class="part-kicker">Part III &nbsp;·&nbsp; Practice</div>
+<h2 class="part-title">The field manual</h2>
+<p class="part-lede">
+Concrete steps, ordered roughly by how much they buy you. Open a section, do the items, move on.
+You do not need all of it at once. <strong>The first three sections cover most real risk.</strong>
+</p>
+</section>
+<div class="content">
+<div class="content-head reveal" data-ui-html="content_head"><em>FIELD MANUAL</em> // OPERATIONAL PROTOCOLS</div>
+<div class="sec reveal open" id="identity">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-user-shield"></i></div>
+<div class="sec-header-text">
+<h2>Identity & Privacy</h2>
+<div class="sec-sub">EMAIL · USERNAMES · DIGITAL FOOTPRINT</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Email Shielding</div>
+<div class="step-desc">Do not publish your primary email address. Utilize aliases or disposable forwards for forums, giveaways, and secondary registrations.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Namespace Separation</div>
+<div class="step-desc">Establish distinct usernames across separate platforms to deny cross-referencing capabilities to passive investigators.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Phone isolation</div>
+<div class="step-desc">Avoid binding your physical phone number to services. Silent contact syncing algorithms will link your profiles together. Use burner or virtual numbers for validation tasks.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Domain Privacy</div>
+<div class="step-desc">Enable WHOIS masking on registered domains. Public access returns owner name, contact emails, and physical location indexes.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Metadata Verification</div>
+<div class="step-desc">Examine photos for context leaks. Reflected surfaces, location indicators, and matching image hashes allow correlation across platforms.</div>
+</div>
+</div>
+<div class="info-box warn">
+<i class="fas fa-exclamation-triangle"></i>
+<div><strong>Data Brokers:</strong> Commercial aggregators collect and catalog personal metrics. Manual opt-out requests or automated tools like Incogni can significantly reduce your exposure index.</div>
+</div>
+<div class="tool-links">
+<a href="index.html#leakCheck" class="tool-chip"><i class="fas fa-magnifying-glass"></i> Check your exposure</a>
+<a href="removal.html" class="tool-chip"><i class="fas fa-eraser"></i> Request removal</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="passwords">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-key"></i></div>
+<div class="sec-header-text">
+<h2>Passwords & Authentication</h2>
+<div class="sec-sub">MANAGERS · GENERATION · BEST PRACTICES</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-shield-halved"></i> Cryptographic Managers</div>
+<div class="step-desc">Deploy an audited password manager. <a href="https://bitwarden.com/" target="_blank" rel="noopener">Bitwarden</a> provides open-source transparency; <a href="https://keepass.info/" target="_blank" rel="noopener">KeePass</a> serves as an offline alternative.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-shield-halved"></i> Zero Password Reuse</div>
+<div class="step-desc">A single breach enables credential stuffing attacks across other portals. Generate randomized, unique strings for every application.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-shield-halved"></i> Diceware Entropy</div>
+<div class="step-desc">Establish master passphrases via physical dice and EFF word lists. Chains of 6+ words optimize human memory while maximizing defense against brute-forcing.</div>
+</div>
+</div>
+<div class="info-box info">
+<i class="fas fa-info-circle"></i>
+<div>Avoid standard password hints or patterns. Ensure your offline master password paper recovery is stored in a physically secure container.</div>
+</div>
+<div class="tool-links">
+<a href="https://bitwarden.com/" target="_blank" rel="noopener" class="tool-chip"><i class="fas fa-external-link-alt"></i> Bitwarden</a>
+<a href="https://keepass.info/" target="_blank" rel="noopener" class="tool-chip"><i class="fas fa-external-link-alt"></i> KeePass</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="2fa">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-lock"></i></div>
+<div class="sec-header-text">
+<h2>Two-Factor Authentication</h2>
+<div class="sec-sub">TOTP · HARDWARE KEYS · RECOVERY</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-fingerprint"></i> Multi-Factor Mandate</div>
+<div class="step-desc">Activate secondary authentication factors. SMS is prone to interception; utilize TOTP apps or physical security keys.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-fingerprint"></i> TOTP Applications</div>
+<div class="step-desc">Deploy <a href="https://getaegis.app/" target="_blank" rel="noopener">Aegis</a> or <a href="https://ente.io/auth" target="_blank" rel="noopener">Ente Auth</a>. Backup structural configurations locally and encrypt database exports.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-fingerprint"></i> FIDO2 Hardening</div>
+<div class="step-desc">Deploy hardware keys like <a href="https://www.yubico.com/" target="_blank" rel="noopener">YubiKey</a> where possible. The cryptographic validation binding prevents authentication on spoofed domains.</div>
+</div>
+</div>
+<div class="info-box danger">
+<i class="fas fa-skull-crossbones"></i>
+<div><strong>SIM Swapping:</strong> Hackers spoof cellular authorization to clone your identity. Bind carrier lines with custom account PINs to prevent number migration.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="email">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-envelope-circle-check"></i></div>
+<div class="sec-header-text">
+<h2>Email Security</h2>
+<div class="sec-sub">PHISHING · ALIASES · TRACKING PIXELS</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Encrypted Hosting</div>
+<div class="step-desc">Migrate critical vectors to privacy-focused servers such as <a href="https://proton.me/mail" target="_blank" rel="noopener">ProtonMail</a>.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Tracking Pixel Suppression</div>
+<div class="step-desc">Configure client rules to block auto-rendering of images. Hidden tracking elements log IP addresses, opening timestamps, and browser configurations.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-circle-nodes"></i> Masking Services</div>
+<div class="step-desc">Generate unique email aliases for third-party configurations, preventing your primary address from leaking during corporate database breaches.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="messaging">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-comment-dots"></i></div>
+<div class="sec-header-text">
+<h2>Messaging Apps</h2>
+<div class="sec-sub">ENCRYPTION · TRUST · HARDENING</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-comment-nodes"></i> Trust Architectures</div>
+<div class="step-desc">Mainstream chat architectures log metadata. Utilize <a href="https://simplex.chat/" target="_blank" rel="noopener">SimpleX</a> or <a href="https://getsession.org/" target="_blank" rel="noopener">Session</a> to decouple chat streams from personal markers.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-comment-nodes"></i> Self-Destruct Timers</div>
+<div class="step-desc">Activate vanishing message parameters. Local data caches on foreign endpoints are a constant security exposure.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-comment-nodes"></i> Media Hardening</div>
+<div class="step-desc">Turn off automatic file downloads. Malicious payloads within media containers can initiate remote execution scripts.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="links">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-link"></i></div>
+<div class="sec-header-text">
+<h2>Links, Files & Downloads</h2>
+<div class="sec-sub">EXECUTABLES · SCANNING · VERIFICATION</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-file-shield"></i> Masked Extensions</div>
+<div class="step-desc">Force operating system parameters to reveal all extensions. Malicious archives frequently double-format targets (e.g. <code>report.pdf.exe</code>).</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-file-shield"></i> Multi-Engine Verification</div>
+<div class="step-desc">Scan downloaded scripts or binaries across various platforms like VirusTotal and Hybrid Analysis prior to execution.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-file-shield"></i> Active Scripts</div>
+<div class="step-desc">Avoid executing raw command lines or scripts copied from forums without verifying what each parameter does.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="browser">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-globe"></i></div>
+<div class="sec-header-text">
+<h2>Browser Privacy</h2>
+<div class="sec-sub">EXTENSIONS · COOKIES · SEARCH ENGINES</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-compass"></i> Privacy Engines</div>
+<div class="step-desc">Deploy <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a> or <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener">Firefox</a>. Integrate uBlock Origin to scrub tracking codes.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-compass"></i> Compartmentalization</div>
+<div class="step-desc">Segregate profiles for personal identity vs anonymous navigation. Never merge credentials across these boundaries.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-compass"></i> Tracking Protection</div>
+<div class="step-desc">Block third-party tracking scripts. Configure settings to isolate cookies to their host domains.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="vpn">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-shield-halved"></i></div>
+<div class="sec-header-text">
+<h2>VPN & Network Privacy</h2>
+<div class="sec-sub">MULLVAD · DNS · WEBRTC LEAKS</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-network-wired"></i> Zero-Logs Encapsulation</div>
+<div class="step-desc">Route connections through <a href="https://mullvad.net/" target="_blank" rel="noopener">Mullvad</a>. Use WireGuard protocols to minimize footprint.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-network-wired"></i> WebRTC Leaks</div>
+<div class="step-desc">Turn off WebRTC protocols in your browser settings. WebRTC leaks real local interfaces past active VPN boundaries.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-network-wired"></i> Encrypted Domain Queries</div>
+<div class="step-desc">Deploy encrypted DNS queries (DNS over HTTPS). Standard DNS lookups leak site addresses to your service provider in plaintext.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="fingerprint">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-fingerprint"></i></div>
+<div class="sec-header-text">
+<h2>Browser Fingerprinting</h2>
+<div class="sec-sub">CANVAS · WEBGL · BLENDING IN</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="fig">
+<svg viewBox="0 0 900 300" role="img" aria-label="How browser attributes narrow a crowd down to one person">
+<text class="d-t-sm" x="14" y="20" style="letter-spacing:0.18em">NOBODY NEEDS A COOKIE TO RECOGNISE YOU</text>
+<rect class="d-box" x="10" y="40" width="860" height="40" rx="8"/>
+<text class="d-t" x="26" y="65">Everyone on the site</text>
+<text class="d-t-sm" x="854" y="65" text-anchor="end">1 in 1</text>
+<rect class="d-box" x="10" y="88" width="640" height="40" rx="8"/>
+<text class="d-t" x="26" y="113">+ screen size and window dimensions</text>
+<text class="d-t-sm" x="634" y="113" text-anchor="end">1 in ~40</text>
+<rect class="d-box" x="10" y="136" width="420" height="40" rx="8"/>
+<text class="d-t" x="26" y="161">+ timezone, language, platform</text>
+<text class="d-t-sm" x="414" y="161" text-anchor="end">1 in ~2,000</text>
+<rect class="d-box" x="10" y="184" width="250" height="40" rx="8"/>
+<text class="d-t" x="26" y="209">+ installed fonts</text>
+<text class="d-t-sm" x="244" y="209" text-anchor="end">1 in ~90k</text>
+<rect class="d-box-hi" x="10" y="232" width="120" height="40" rx="8"/>
+<text class="d-t-hi" x="26" y="257">+ GPU render</text>
+<text class="d-t-sm" x="150" y="257" style="fill:#d8d8d8">you, specifically · across every site, with no cookie at all</text>
+<text class="d-t-sm" x="450" y="292" text-anchor="middle" style="fill:#9aa0aa">Each attribute is harmless. Combined, they are an identifier you cannot delete.</text>
+</svg>
+<div class="fig-cap">
+<b>Why adding privacy extensions can backfire.</b> Every tweak makes you rarer,
+and rare is exactly what fingerprinting looks for. The winning move is not to
+be unusual, it is to be identical to thousands of other people, which is the
+one thing Tor Browser and Mullvad Browser are actually built to do.
+</div>
+</div>
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-user-secret"></i> Anonymity Pools</div>
+<div class="step-desc">Do not randomize fingerprint fields manually. Your browser must blend in with thousands of other targets to avoid detection.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-user-secret"></i> Isolation Tools</div>
+<div class="step-desc">Deploy Mullvad Browser or Tor Browser. These standard configurations use strict canvas and window letterboxing protections by default.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-user-secret"></i> Profile Testing</div>
+<div class="step-desc">Validate your browser configuration parameters using tools like Cover Your Tracks. Aim for randomized or shared characteristics.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="device">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-laptop-code"></i></div>
+<div class="sec-header-text">
+<h2>Device & System Security</h2>
+<div class="sec-sub">ENCRYPTION · ANTIMALWARE · UPDATES</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-laptop"></i> Cryptographic Volumes</div>
+<div class="step-desc">Activate full-disk encryption. Deploy <a href="https://www.veracrypt.fr/" target="_blank" rel="noopener">VeraCrypt</a> or system-level encryption protocols to protect data from physical tampering.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-laptop"></i> Endpoint Safeguards</div>
+<div class="step-desc">Configure baseline security updates. Run processes from restricted accounts instead of administrator profiles.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-laptop"></i> Physical Interface Locks</div>
+<div class="step-desc">Do not connect unknown USB drives. Disable auto-run properties, cover physical cameras, and avoid using untrusted charging interfaces.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="data">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-database"></i></div>
+<div class="sec-header-text">
+<h2>Data, Backups & Transfers</h2>
+<div class="sec-sub">3-2-1-1 RULE · METADATA · CLOUD</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-cloud-arrow-up"></i> EXIF Removal</div>
+<div class="step-desc">Strip EXIF parameters from photos and files before sharing. EXIF tags contain GPS lookups, camera models, and timestamps.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-cloud-arrow-up"></i> 3-2-1-1 Backup Plan</div>
+<div class="step-desc">Store 3 copies of your data on 2 separate media formats, keep 1 off-site, and maintain 1 air-gapped copy fully disconnected from all network interfaces.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-cloud-arrow-up"></i> Client Encryption</div>
+<div class="step-desc">Encrypt sensitive assets before uploading them to cloud interfaces. Storage providers should only ever store your ciphertext.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="opsec">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-eye-slash"></i></div>
+<div class="sec-header-text">
+<h2>OPSEC & Mindset</h2>
+<div class="sec-sub">PERSONAS · PATTERNS · AI EXPOSURE</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-user-secret"></i> Separation of Personas</div>
+<div class="step-desc">Never link anonymous identities to your real name. Once linked, browser cookies or network histories can compromise all personas.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-user-secret"></i> Writing Style & Timezones</div>
+<div class="step-desc">Be mindful of typing patterns and consistent timezone activity. Stylometry engines can fingerprint writing styles and link accounts.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-user-secret"></i> AI Input Shielding</div>
+<div class="step-desc">Do not input sensitive code, documents, or keys into public AI portals. Your data is stored on remote servers for model updates.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="incident">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-triangle-exclamation"></i></div>
+<div class="sec-header-text">
+<h2>Incident Response</h2>
+<div class="sec-sub">COMPROMISED? DO THIS NOW</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="fig">
+<svg viewBox="0 0 900 322" role="img" aria-label="Order of operations after a compromise">
+<text class="d-t-sm" x="14" y="20" style="letter-spacing:0.18em">ORDER MATTERS · DOING THESE OUT OF SEQUENCE UNDOES THEM</text>
+<line class="d-line" x1="60" y1="86" x2="840" y2="86" stroke-dasharray="4 5"/>
+<circle class="d-box-hi" cx="90" cy="86" r="15"/>
+<text class="d-t-hi" x="90" y="91" text-anchor="middle" style="font-size:11px">1</text>
+<text class="d-t" x="90" y="132" text-anchor="middle">Disconnect</text>
+<text class="d-t-sm" x="90" y="154" text-anchor="middle">stop the bleeding</text>
+<text class="d-t-sm" x="90" y="174" text-anchor="middle" style="fill:#9096a0">unplug, don't</text>
+<text class="d-t-sm" x="90" y="192" text-anchor="middle" style="fill:#9096a0">shut down</text>
+<circle class="d-box-hi" cx="278" cy="86" r="15"/>
+<text class="d-t-hi" x="278" y="91" text-anchor="middle" style="font-size:11px">2</text>
+<text class="d-t" x="278" y="132" text-anchor="middle">Clean device first</text>
+<text class="d-t-sm" x="278" y="154" text-anchor="middle">phone or another PC</text>
+<text class="d-t-sm" x="278" y="174" text-anchor="middle" style="fill:#9096a0">never reset passwords</text>
+<text class="d-t-sm" x="278" y="192" text-anchor="middle" style="fill:#9096a0">on the infected machine</text>
+<circle class="d-box-hi" cx="466" cy="86" r="15"/>
+<text class="d-t-hi" x="466" y="91" text-anchor="middle" style="font-size:11px">3</text>
+<text class="d-t" x="466" y="132" text-anchor="middle">Email, then money</text>
+<text class="d-t-sm" x="466" y="154" text-anchor="middle">inbox resets everything</text>
+<text class="d-t-sm" x="466" y="174" text-anchor="middle" style="fill:#9096a0">then banking, then</text>
+<text class="d-t-sm" x="466" y="192" text-anchor="middle" style="fill:#9096a0">everything else</text>
+<circle class="d-box-hi" cx="654" cy="86" r="15"/>
+<text class="d-t-hi" x="654" y="91" text-anchor="middle" style="font-size:11px">4</text>
+<text class="d-t" x="654" y="132" text-anchor="middle">Revoke sessions</text>
+<text class="d-t-sm" x="654" y="154" text-anchor="middle">a new password alone</text>
+<text class="d-t-sm" x="654" y="174" text-anchor="middle" style="fill:#9096a0">does not log them out</text>
+<circle class="d-box-hi" cx="820" cy="86" r="15"/>
+<text class="d-t-hi" x="820" y="91" text-anchor="middle" style="font-size:11px">5</text>
+<text class="d-t" x="820" y="132" text-anchor="middle">Wipe</text>
+<text class="d-t-sm" x="820" y="154" text-anchor="middle">reinstall clean</text>
+<text class="d-t-sm" x="820" y="174" text-anchor="middle" style="fill:#9096a0">removal tools</text>
+<text class="d-t-sm" x="820" y="192" text-anchor="middle" style="fill:#9096a0">are not proof</text>
+<rect class="d-box" x="10" y="224" width="880" height="66" rx="11"/>
+<text class="d-t" x="30" y="252">The mistake almost everyone makes: changing passwords while the stealer is still running.</text>
+<text class="d-t-sm" x="30" y="274">It captures the new ones as you type them, and you have handed the attacker a fresh set.</text>
+</svg>
+<div class="fig-cap">
+<b>Assume it saw everything.</b> Treat every password typed on that machine as
+public, every session as active, and every saved browser login as taken, until you have reset them from a device you trust.
+</div>
+</div>
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-fire-extinguisher"></i> Immediate Network Disconnection</div>
+<div class="step-desc">Disconnect the network interface immediately. Remove ethernet cabling, and disable WiFi/Bluetooth hardware.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-fire-extinguisher"></i> Session Isolation</div>
+<div class="step-desc">Do not log into sensitive portals from a compromised device. Use a clean, isolated node to rotate credentials and revoke active sessions.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-fire-extinguisher"></i> Zero-Trust Wipe</div>
+<div class="step-desc">A compromised device cannot be trusted. If infected, wipe all partition tables completely and reinstall the operating system.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="ratted">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-virus"></i></div>
+<div class="sec-header-text">
+<h2>Ratted? What to Do?</h2>
+<div class="sec-sub">RAT · STEALERS · FULL RECOVERY</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="steps-container">
+<div class="step-card">
+<div class="step-title"><i class="fas fa-plug-circle-xmark"></i> Kill the Connection</div>
+<div class="step-desc">Pull ethernet, disable Wi‑Fi and Bluetooth, and unplug the machine if you can. A live RAT can exfiltrate keystrokes, screenshots, and clipboard data in real time.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-plug-circle-xmark"></i> Do Not “Fix It” on the Same PC</div>
+<div class="step-desc">Do not log into email, Discord, banks, or crypto wallets from the infected device. Assume every password you type is captured. Use a clean phone or another computer for recovery.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-plug-circle-xmark"></i> Revoke Sessions First</div>
+<div class="step-desc">From a clean device, sign out of all sessions on Discord, Google, Microsoft, and any exchange or wallet. Rotate passwords starting with email. It is the recovery key for everything else.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-plug-circle-xmark"></i> Check What Was Stolen</div>
+<div class="step-desc">Review saved browser passwords, autofill, crypto extensions, and 2FA backup codes stored locally. Token grabbers often harvest Discord tokens, cookies, and wallet seed phrases in one pass.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-plug-circle-xmark"></i> Assume Persistence</div>
+<div class="step-desc">RATs hide in startup entries, scheduled tasks, services, and AppData folders. Deleting one file rarely removes the infection. Treat the whole install as compromised.</div>
+</div>
+<div class="step-card">
+<div class="step-title"><i class="fas fa-plug-circle-xmark"></i> Wipe and Reinstall</div>
+<div class="step-desc">Back up only personal files you can verify (photos, documents, not executables). Format the drive, reinstall Windows from official media, and patch before restoring data.</div>
+</div>
+</div>
+<div class="info-box danger">
+<i class="fas fa-skull-crossbones"></i>
+<div><strong>After recovery:</strong> Enable hardware or app-based 2FA everywhere, use a password manager on the clean system, and never run cracked games, “free Nitro” tools, or unknown <code>.exe</code> files again. That is how most RATs land.</div>
+</div>
+<div class="info-box warn">
+<i class="fas fa-exclamation-triangle"></i>
+<div><strong>Warning signs:</strong> Mouse moving alone, webcam LED flicker, unknown processes in Task Manager, new startup programs, friends getting scam DMs from your account, or wallets draining without your action.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec reveal open" id="attacks">
+<div class="sec-glass">
+<div class="sec-header">
+<div class="sec-icon"><i class="fas fa-skull-crossbones"></i></div>
+<div class="sec-header-text">
+<h2>Common Cyber Attacks</h2>
+<div class="sec-sub">KNOW WHAT YOU'RE UP AGAINST</div>
+</div>
+<i class="fas fa-chevron-down sec-chevron"></i>
+</div>
+<div class="sec-body">
+<div class="sec-body-inner">
+<div class="attack-grid">
+<div class="attack-card">
+<h4><i class="fas fa-lock" style="color:var(--danger)"></i> Ransomware</h4>
+<p>Encrypts your local files and demands payment to restore access keys.</p>
+</div>
+<div class="attack-card">
+<h4><i class="fas fa-fish" style="color:var(--warning)"></i> Phishing</h4>
+<p>Socially engineered targets designed to capture credentials via spoofed portals.</p>
+</div>
+<div class="attack-card">
+<h4><i class="fas fa-network-wired" style="color:var(--primary)"></i> DDoS</h4>
+<p>Flooding network targets with traffic to degrade infrastructure performance.</p>
+</div>
+<div class="attack-card">
+<h4><i class="fas fa-user-secret" style="color:var(--warning)"></i> MITM</h4>
+<p>Intercepting communication streams between target interfaces to extract data.</p>
+</div>
+<div class="attack-card">
+<h4><i class="fas fa-database" style="color:var(--danger)"></i> SQL Injection</h4>
+<p>Injecting backend queries into active variables to extract server records.</p>
+</div>
+<div class="attack-card">
+<h4><i class="fas fa-bug" style="color:var(--danger)"></i> Zero-Day</h4>
+<p>Targeting unpatched security bugs before updates become available.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="part" id="recs">
+<div class="part-kicker">Part IV &nbsp;·&nbsp; Tooling</div>
+<h2 class="part-title">Recommendations</h2>
+<p class="part-lede">
+Tools that hold up when you actually read how they work: open where it counts, audited, and not
+funded by selling you. <strong>Marked <em>PICK</em> = the one to take if you don't want to
+compare.</strong> Everything here is free unless noted.
+</p>
+</section>
+<div class="kb">
+<div class="info-box">
+<i class="fas fa-circle-info"></i>
+<div><strong>How to read this list.</strong> No tool makes you private on its own, and no list
+stays correct forever. Ownership changes, audits expire, and defaults get worse. Treat these
+as starting points and re-check anything you rely on once a year.</div>
+</div>
+<div class="fig">
+<svg viewBox="0 0 900 210" role="img" aria-label="Three tiers of privacy setup: baseline, solid, hardened">
+<rect class="d-box" x="10" y="40" width="280" height="120" rx="12"/>
+<text class="d-t-sm" x="30" y="66" style="letter-spacing:0.16em">TIER 1</text>
+<text class="d-t-hi" x="30" y="90">Baseline</text>
+<text class="d-t-sm" x="30" y="112">Password manager + app 2FA</text>
+<text class="d-t-sm" x="30" y="128">Ad/tracker blocker</text>
+<text class="d-t-sm" x="30" y="144">Updates on, SMS 2FA off</text>
+<rect class="d-box" x="310" y="40" width="280" height="120" rx="12"/>
+<text class="d-t-sm" x="330" y="66" style="letter-spacing:0.16em">TIER 2</text>
+<text class="d-t-hi" x="330" y="90">Solid</text>
+<text class="d-t-sm" x="330" y="112">Private email + aliases</text>
+<text class="d-t-sm" x="330" y="128">Signal for messaging</text>
+<text class="d-t-sm" x="330" y="144">Hardened browser, own DNS</text>
+<rect class="d-box-hi" x="610" y="40" width="280" height="120" rx="12"/>
+<text class="d-t-sm" x="630" y="66" style="letter-spacing:0.16em">TIER 3</text>
+<text class="d-t-hi" x="630" y="90">Hardened</text>
+<text class="d-t-sm" x="630" y="112">GrapheneOS / Linux</text>
+<text class="d-t-sm" x="630" y="128">Compartmented identities</text>
+<text class="d-t-sm" x="630" y="144">Tor where it matters</text>
+<path class="d-line-hi" d="M292 100 h14"/><path class="d-line-hi" d="M300 94 l7 6 l-7 6"/>
+<path class="d-line-hi" d="M592 100 h14"/><path class="d-line-hi" d="M600 94 l7 6 l-7 6"/>
+<text class="d-t-sm" x="10" y="24" style="letter-spacing:0.16em;fill:#7a7a7a">MOST PEOPLE SHOULD FINISH TIER 1 BEFORE TOUCHING ANYTHING ELSE</text>
+<text class="d-t-sm" x="450" y="192" text-anchor="middle" style="fill:#9096a0">Effort rises steeply; risk removed rises fastest at the start.</text>
+</svg>
+<div class="fig-cap">
+<b>Diminishing returns are real.</b> Tier 1 removes most of the harm most people will ever
+face. Tier 3 exists for journalists, activists, and anyone with a named adversary, it costs
+real convenience, so adopt it deliberately, not for the aesthetic.
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Password managers</h3><span>THE SINGLE HIGHEST-VALUE CHANGE</span></div>
+<p class="rec-why">One unique password per site, generated and remembered for you. This alone
+kills credential stuffing, the attack behind most "hacked" accounts.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Bitwarden</strong><span class="rec-tag pick">Pick</span></div>
+<p>Open source, audited, syncs everywhere, generous free tier. The default answer for almost everyone.</p>
+<div class="rec-meta"><span>Free</span><span>All platforms</span><span>Cloud sync</span></div>
+<a class="rec-go" href="https://bitwarden.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> bitwarden.com</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>KeePassXC</strong><span class="rec-tag">Offline</span></div>
+<p>A local encrypted file, no server involved. Maximum control, but you handle backup and sync yourself.</p>
+<div class="rec-meta"><span>Free</span><span>Desktop</span><span>No cloud</span></div>
+<a class="rec-go" href="https://keepassxc.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> keepassxc.org</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Proton Pass</strong></div>
+<p>Built-in email aliasing is the real draw: a new alias per signup without leaving the manager.</p>
+<div class="rec-meta"><span>Freemium</span><span>Aliases</span></div>
+<a class="rec-go" href="https://proton.me/pass" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> proton.me/pass</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Two-factor authentication</h3><span>STOP USING SMS</span></div>
+<p class="rec-why">SMS codes are redirectable with a SIM swap and are the weakest option still
+widely offered. Move to an app, or to hardware if the account really matters.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Ente Auth</strong><span class="rec-tag pick">Pick</span></div>
+<p>Open source TOTP with encrypted cross-device backup, so the failure mode of "lost phone, lost codes" is solved.</p>
+<div class="rec-meta"><span>Free</span><span>All platforms</span><span>E2E backup</span></div>
+<a class="rec-go" href="https://ente.io/auth" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> ente.io/auth</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Aegis Authenticator</strong></div>
+<p>Android-only, fully offline, encrypted vault with manual export. Ideal if you want nothing leaving the device.</p>
+<div class="rec-meta"><span>Free</span><span>Android</span><span>Offline</span></div>
+<a class="rec-go" href="https://getaegis.app/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> getaegis.app</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Hardware keys</strong><span class="rec-tag">Strongest</span></div>
+<p>YubiKey or any FIDO2 key. Phishing-resistant by design, a fake login page cannot replay it. Buy two, keep one as backup.</p>
+<div class="rec-meta"><span>Paid</span><span>FIDO2 / WebAuthn</span></div>
+<a class="rec-go" href="https://www.yubico.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> yubico.com</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Browsers</h3><span>WHERE MOST TRACKING HAPPENS</span></div>
+<p class="rec-why">Your browser leaks more than your IP: fonts, screen size, GPU, and extensions
+combine into a fingerprint. Blending in beats bolting on twenty add-ons.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Mullvad Browser</strong><span class="rec-tag pick">Pick</span></div>
+<p>Tor Browser's anti-fingerprinting work, without Tor. Every user looks the same, the only real defence against fingerprinting.</p>
+<div class="rec-meta"><span>Free</span><span>Desktop</span><span>Anti-fingerprint</span></div>
+<a class="rec-go" href="https://mullvad.net/browser" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> mullvad.net/browser</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Firefox + hardening</strong></div>
+<p>Good daily driver once you enable strict protections and containers. Keep the extension list short.</p>
+<div class="rec-meta"><span>Free</span><span>All platforms</span></div>
+<a class="rec-go" href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> mozilla.org/firefox</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Brave</strong></div>
+<p>Chromium-based with blocking on by default. Easiest switch if a site refuses to work anywhere else. Turn the crypto features off.</p>
+<div class="rec-meta"><span>Free</span><span>All platforms</span></div>
+<a class="rec-go" href="https://brave.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> brave.com</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Tor Browser</strong><span class="rec-tag">Anonymity</span></div>
+<p>The only mainstream tool aiming at real anonymity. Slower by design. Don't log into your real accounts through it.</p>
+<div class="rec-meta"><span>Free</span><span>Anonymity</span></div>
+<a class="rec-go" href="https://www.torproject.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> torproject.org</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>uBlock Origin</strong><span class="rec-tag">Extension</span></div>
+<p>The one extension worth installing. Blocks ads, trackers, and a large share of malware delivery. Nothing else needed.</p>
+<div class="rec-meta"><span>Free</span><span>Open source</span></div>
+<a class="rec-go" href="https://github.com/gorhill/uBlock" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> ublockorigin</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Search engines</h3><span>YOUR QUERIES ARE A DIARY</span></div>
+<p class="rec-why">Search history reveals health, finances, relationships, and intent, often
+before you've told anyone. Use an engine that doesn't build a profile from it.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>DuckDuckGo</strong><span class="rec-tag pick">Pick</span></div>
+<p>No search profile, works everywhere, sane defaults. The lowest-friction switch you can make today.</p>
+<div class="rec-meta"><span>Free</span><span>No account</span></div>
+<a class="rec-go" href="https://duckduckgo.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> duckduckgo.com</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Brave Search</strong></div>
+<p>Runs its own index rather than reselling someone else's results, which is rare and worth supporting.</p>
+<div class="rec-meta"><span>Free</span><span>Own index</span></div>
+<a class="rec-go" href="https://search.brave.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> search.brave.com</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Startpage</strong></div>
+<p>Google's results without Google watching you ask. Useful when you need that specific index.</p>
+<div class="rec-meta"><span>Free</span><span>Proxied results</span></div>
+<a class="rec-go" href="https://www.startpage.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> startpage.com</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Email &amp; aliasing</h3><span>THE MASTER KEY · PROTECT IT FIRST</span></div>
+<p class="rec-why">Your inbox can reset every other account you own, so it deserves your
+strongest 2FA. Aliases stop one signup from linking to all the others.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Proton Mail</strong><span class="rec-tag pick">Pick</span></div>
+<p>Encrypted at rest, mature apps, custom domains on paid plans. The practical default for a private inbox.</p>
+<div class="rec-meta"><span>Freemium</span><span>E2EE</span><span>Swiss</span></div>
+<a class="rec-go" href="https://proton.me/mail" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> proton.me/mail</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Tuta</strong></div>
+<p>Encrypts more of the mailbox than most, including subjects and contacts. Its own protocol, so no standard IMAP.</p>
+<div class="rec-meta"><span>Freemium</span><span>E2EE</span></div>
+<a class="rec-go" href="https://tuta.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> tuta.com</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>SimpleLogin / addy.io</strong><span class="rec-tag">Aliases</span></div>
+<p>A throwaway address per service. When one gets breached or sold, you know exactly who did it, and you kill just that alias.</p>
+<div class="rec-meta"><span>Freemium</span><span>Open source</span></div>
+<a class="rec-go" href="https://simplelogin.io/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> simplelogin.io</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Messaging</h3><span>CONTENT VS METADATA</span></div>
+<p class="rec-why">Encryption hides <em>what</em> you said. Metadata (who, when, how often) is often more revealing, and most apps keep it. That's the real difference below.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Signal</strong><span class="rec-tag pick">Pick</span></div>
+<p>The reference implementation of private messaging: E2EE by default, minimal metadata retained, and people will actually join you there.</p>
+<div class="rec-meta"><span>Free</span><span>E2EE default</span><span>Phone number</span></div>
+<a class="rec-go" href="https://signal.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> signal.org</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>SimpleX Chat</strong><span class="rec-tag">No identifiers</span></div>
+<p>No phone number, no username, not even a user ID, so there is no account to correlate. The strongest metadata story available.</p>
+<div class="rec-meta"><span>Free</span><span>Open source</span></div>
+<a class="rec-go" href="https://simplex.chat/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> simplex.chat</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Briar</strong><span class="rec-tag">Offline-capable</span></div>
+<p>Peer-to-peer over Tor, and over Wi-Fi/Bluetooth with no internet at all. Built for blackouts and shutdowns.</p>
+<div class="rec-meta"><span>Free</span><span>P2P</span><span>Android</span></div>
+<a class="rec-go" href="https://briarproject.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> briarproject.org</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>VPN &amp; DNS</h3><span>NARROWER THAN THE ADS CLAIM</span></div>
+<p class="rec-why">A VPN moves trust from your ISP to the VPN company. That is the entire
+product. Useful on hostile networks and against ISP logging; useless against a site you
+logged into.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Mullvad</strong><span class="rec-tag pick">Pick</span></div>
+<p>No email, no account name, just a random number, and you can pay in cash. Flat price, audited, refuses to build a profile on you.</p>
+<div class="rec-meta"><span>Paid</span><span>Anonymous signup</span><span>Audited</span></div>
+<a class="rec-go" href="https://mullvad.net/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> mullvad.net</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>IVPN</strong></div>
+<p>Same philosophy, also audited, similar anonymous signup. A solid alternative if you want a second option.</p>
+<div class="rec-meta"><span>Paid</span><span>Audited</span></div>
+<a class="rec-go" href="https://www.ivpn.net/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> ivpn.net</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Quad9 / NextDNS</strong><span class="rec-tag">DNS</span></div>
+<p>Encrypted DNS stops your provider reading every domain you visit, and blocks known malware hosts on the way.</p>
+<div class="rec-meta"><span>Free tier</span><span>DoH / DoT</span></div>
+<a class="rec-go" href="https://quad9.net/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> quad9.net</a>
+</div>
+</div>
+<div class="info-box warn" style="margin-top:14px">
+<i class="fas fa-exclamation-triangle"></i>
+<div><strong>A VPN is not anonymity.</strong> Any provider advertising it that way is
+selling you a feeling. Free VPNs are worse than none: the bandwidth is paid for by
+selling exactly the traffic you were trying to hide.</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Operating systems</h3><span>THE FLOOR EVERYTHING ELSE STANDS ON</span></div>
+<p class="rec-why">A compromised OS makes every app above it irrelevant. This is Tier 3 work: high impact, but only worth it once the basics are done.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>GrapheneOS</strong><span class="rec-tag pick">Mobile</span></div>
+<p>Hardened Android for Pixel devices, with sandboxed Google services you can switch off entirely. The strongest realistic phone setup.</p>
+<div class="rec-meta"><span>Free</span><span>Pixel only</span></div>
+<a class="rec-go" href="https://grapheneos.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> grapheneos.org</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Linux (Fedora / Debian)</strong></div>
+<p>No telemetry economy behind it, full disk encryption at install, and updates you control. A normal desktop, not a project.</p>
+<div class="rec-meta"><span>Free</span><span>Desktop</span></div>
+<a class="rec-go" href="https://fedoraproject.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> fedoraproject.org</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Tails</strong><span class="rec-tag">Amnesic</span></div>
+<p>Boots from USB, routes through Tor, forgets everything on shutdown. For work that must leave no trace on the machine.</p>
+<div class="rec-meta"><span>Free</span><span>Live USB</span></div>
+<a class="rec-go" href="https://tails.net/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> tails.net</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Qubes OS</strong><span class="rec-tag">Compartmented</span></div>
+<p>Every activity in its own isolated VM, so one bad file can't reach the rest. Steep learning curve, unmatched separation.</p>
+<div class="rec-meta"><span>Free</span><span>Advanced</span></div>
+<a class="rec-go" href="https://www.qubes-os.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> qubes-os.org</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Files, notes &amp; sharing</h3><span>ENCRYPT BEFORE UPLOAD</span></div>
+<p class="rec-why">"Encrypted cloud" usually means encrypted with a key the provider also holds.
+If you encrypt before it leaves your device, that distinction stops mattering.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Cryptomator</strong><span class="rec-tag pick">Pick</span></div>
+<p>Creates an encrypted vault inside any cloud you already use. Keeps your existing setup, removes the provider from the trust equation.</p>
+<div class="rec-meta"><span>Free</span><span>Works on any cloud</span></div>
+<a class="rec-go" href="https://cryptomator.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> cryptomator.org</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Proton Drive</strong></div>
+<p>End-to-end encrypted storage that behaves like normal cloud storage. Easiest path if you're already in the Proton ecosystem.</p>
+<div class="rec-meta"><span>Freemium</span><span>E2EE</span></div>
+<a class="rec-go" href="https://proton.me/drive" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> proton.me/drive</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>OnionShare</strong><span class="rec-tag">Direct</span></div>
+<p>Sends a file straight from your machine over Tor, no upload, no third party, no copy left behind on a server.</p>
+<div class="rec-meta"><span>Free</span><span>Over Tor</span></div>
+<a class="rec-go" href="https://onionshare.org/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> onionshare.org</a>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Standard Notes / Joplin</strong><span class="rec-tag">Notes</span></div>
+<p>Encrypted notebooks that sync. Your notes app usually holds more sensitive material than your email, so treat it that way.</p>
+<div class="rec-meta"><span>Freemium</span><span>E2EE</span></div>
+<a class="rec-go" href="https://standardnotes.com/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> standardnotes.com</a>
+</div>
+</div>
+</div>
+<div class="rec-cat">
+<div class="rec-cat-head"><h3>Getting existing data removed</h3><span>CLEANING UP THE PAST</span></div>
+<p class="rec-why">Everything above stops new leakage. This part is about what is already out
+there: slower, less satisfying, and still worth doing.</p>
+<div class="rec-grid">
+<div class="rec-card is-pick">
+<div class="rec-head"><strong>Manual opt-outs</strong><span class="rec-tag pick">Free</span></div>
+<p>Every major broker has a removal form, usually hidden. Tedious, but it's the only method with no middleman and no cost.</p>
+<div class="rec-meta"><span>Free</span><span>Slow</span><span>Permanent-ish</span></div>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Removal services</strong></div>
+<p>Incogni, DeleteMe and similar file requests on your behalf. Convenient, but you hand them your data to do it, and coverage is partial.</p>
+<div class="rec-meta"><span>Paid</span><span>Subscription</span></div>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>Legal requests</strong><span class="rec-tag">GDPR / CCPA</span></div>
+<p>In the EU, UK, and parts of the US you can legally demand deletion, and companies must answer within a deadline. Free and enforceable.</p>
+<div class="rec-meta"><span>Free</span><span>Region-dependent</span></div>
+</div>
+<div class="rec-card">
+<div class="rec-head"><strong>IntelByte removal</strong><span class="rec-tag">Ours</span></div>
+<p>See where you appear, then send removal requests from one place instead of hunting forms one by one.</p>
+<div class="rec-meta"><span>On-site</span></div>
+<a class="rec-go" href="removal.html"><i class="fas fa-arrow-right"></i> Start a removal</a>
+</div>
+</div>
+</div>
+</div>
+<section class="part" id="activism">
+<div class="part-kicker">Part V &nbsp;·&nbsp; Beyond yourself</div>
+<h2 class="part-title">Privacy is not a solo project</h2>
+<p class="part-lede">
+You can harden every device you own and still lose, because the rules are set somewhere else.
+<strong>Individual defence buys you time; it does not change the system.</strong> This part is
+about the other half.
+</p>
+</section>
+<div class="kb">
+<div class="kb-block">
+<h3 class="kb-h3" id="act-why"><i class="fas fa-scale-balanced"></i> Why it stops being a personal choice</h3>
+<p class="kb-p">
+Privacy behaves like a collective good, not a personal preference. If you use an encrypted
+messenger and everyone you know uses an open one, <strong>your conversations are still
+collected</strong>, from the other side. Your contacts upload your number. Your friends tag
+your face. Your landlord digitises your documents. Most of your exposure is generated by
+other people's defaults.
+</p>
+<p class="kb-p">
+It also has a chilling effect that never shows up in statistics. People search less, read
+less, and say less when they assume they're being logged, and the ones who self-censor
+first are usually the ones with the least power to begin with.
+</p>
+<div class="principle">
+<p>Surveillance is rarely built for the population it ends up being used on. Systems built
+for emergencies get inherited by whoever governs next.</p>
+<cite>The ratchet problem</cite>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="act-backdoor"><i class="fas fa-key"></i> The backdoor argument, drawn out</h3>
+<p class="kb-p">
+The recurring proposal, under names like client-side scanning, lawful access, or
+"responsible encryption", is to give authorities a way to read encrypted messages. The
+technical objection is not ideological. <em>A door that opens for one party is a door.</em>
+</p>
+<div class="fig">
+<svg viewBox="0 0 900 400" role="img" aria-label="Diagram showing that an encryption backdoor can be used by anyone">
+<path class="d-ico" d="M178 150 v-28 a52 52 0 0 1 104 0 v28" stroke-width="2.2"/>
+<rect class="d-box-hi" x="150" y="150" width="160" height="152" rx="15"/>
+<text class="d-t-sm" x="230" y="180" text-anchor="middle" style="letter-spacing:0.22em">ENCRYPTED</text>
+<circle class="d-ico" cx="196" cy="230" r="12"/>
+<path class="d-ico" d="M196 242 v20"/>
+<text class="d-t-sm" x="196" y="288" text-anchor="middle">you</text>
+<circle cx="264" cy="230" r="21" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+<circle class="d-ico" cx="264" cy="230" r="12" stroke-dasharray="4 3"/>
+<path class="d-ico" d="M264 242 v20" stroke-dasharray="4 3"/>
+<text class="d-t-sm" x="264" y="288" text-anchor="middle" style="fill:#e2e2e8">the added one</text>
+<path class="d-line-hi" d="M310 230 h-24" stroke-dasharray="4 3"/>
+<path class="d-line-hi" d="M452 230 H 322"/>
+<path class="d-line-hi" d="M330 224 l-8 6 l8 6"/>
+<circle cx="452" cy="230" r="3.5" fill="rgba(255,255,255,0.55)"/>
+<g class="d-line">
+<path d="M556 62  C 500 62  478 168 455 222"/>
+<path d="M556 130 C 508 130 480 190 452 226"/>
+<path d="M556 198 C 512 198 484 214 452 230"/>
+<path d="M556 266 C 508 266 478 250 453 236"/>
+</g>
+<rect class="d-box" x="556" y="36" width="334" height="52" rx="10"/>
+<text class="d-t" x="578" y="60">Law enforcement</text>
+<text class="d-t-sm" x="578" y="77">the case it is argued for</text>
+<rect class="d-box" x="556" y="104" width="334" height="52" rx="10"/>
+<text class="d-t" x="578" y="128">A future government</text>
+<text class="d-t-sm" x="578" y="145">inherits the same access, with new rules</text>
+<rect class="d-box" x="556" y="172" width="334" height="52" rx="10"/>
+<text class="d-t" x="578" y="196">Foreign intelligence</text>
+<text class="d-t-sm" x="578" y="213">the key is now a target worth any budget</text>
+<rect class="d-box" x="556" y="240" width="334" height="52" rx="10"/>
+<text class="d-t" x="578" y="264">Whoever steals the key</text>
+<text class="d-t-sm" x="578" y="281">and keys do get stolen, eventually</text>
+<line class="d-line" x1="10" y1="330" x2="890" y2="330" stroke-dasharray="4 5"/>
+<text class="d-t" x="450" y="358" text-anchor="middle">One opening. Four different people walking through it.</text>
+<text class="d-t-sm" x="450" y="380" text-anchor="middle" style="fill:#9aa0aa">The lock cannot tell them apart. It only checks that the key fits.</text>
+</svg>
+<div class="fig-cap">
+<b>There is no "good guys only" cryptography.</b> Access is granted by holding a key, not
+by having good intentions, so every backdoor is also a permanent, high-value target.
+The same reasoning applies to scanning your messages on-device before they're encrypted:
+once the scanner exists, what it looks for is a policy setting.
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="act-orgs"><i class="fas fa-hand-fist"></i> Groups doing the actual work</h3>
+<p class="kb-p">
+Supporting these is higher-leverage than any tool you install. Most run on small donations
+and volunteer time.
+</p>
+<div class="act-grid">
+<div class="act-card">
+<h4>Electronic Frontier Foundation</h4>
+<span class="act-sub">Litigation · policy</span>
+<p>Sues over unlawful surveillance and shapes the legal precedent everyone else relies on.
+<a href="https://www.eff.org/" target="_blank" rel="noopener">eff.org</a></p>
+</div>
+<div class="act-card">
+<h4>The Tor Project</h4>
+<span class="act-sub">Infrastructure</span>
+<p>Maintains the network millions use to get around censorship. You can also run a relay yourself.
+<a href="https://www.torproject.org/" target="_blank" rel="noopener">torproject.org</a></p>
+</div>
+<div class="act-card">
+<h4>Signal Foundation</h4>
+<span class="act-sub">Encrypted messaging</span>
+<p>Nonprofit, donation-funded, and the reason strong encryption is a normal consumer default.
+<a href="https://signal.org/donate/" target="_blank" rel="noopener">signal.org</a></p>
+</div>
+<div class="act-card">
+<h4>noyb</h4>
+<span class="act-sub">EU enforcement</span>
+<p>Turns data-protection law from theory into fines by filing the complaints nobody else does.
+<a href="https://noyb.eu/" target="_blank" rel="noopener">noyb.eu</a></p>
+</div>
+<div class="act-card">
+<h4>Privacy International</h4>
+<span class="act-sub">Global investigation</span>
+<p>Investigates state and corporate surveillance, especially where exported to countries with weak protections.
+<a href="https://privacyinternational.org/" target="_blank" rel="noopener">privacyinternational.org</a></p>
+</div>
+<div class="act-card">
+<h4>Freedom of the Press Foundation</h4>
+<span class="act-sub">Source protection</span>
+<p>Builds and maintains tools that let journalists receive material without exposing who sent it.
+<a href="https://freedom.press/" target="_blank" rel="noopener">freedom.press</a></p>
+</div>
+</div>
+</div>
+<div class="kb-block">
+<h3 class="kb-h3" id="act-do"><i class="fas fa-list-check"></i> What you can actually do</h3>
+<p class="kb-p">
+Ordered by effort. The first two cost nothing and matter more than people expect, because
+they change the defaults around you rather than only your own.
+</p>
+<div class="do-list">
+<div class="do-item">
+<div class="do-num">01</div>
+<div class="do-b"><strong>Bring one person with you</strong>
+<span>Encryption is worth more the more people use it. Move one conversation to Signal and you've just protected two people, and normalised it for a third.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">02</div>
+<div class="do-b"><strong>Stop treating "nothing to hide" as harmless</strong>
+<span>It's the sentence every expansion of surveillance is built on. Answering it well, once, in a normal conversation does more than a hundred hardened configs.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">03</div>
+<div class="do-b"><strong>Exercise your legal rights</strong>
+<span>Request your data, then demand deletion. Every request costs the company money and creates a record. Rights that go unused get quietly written out.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">04</div>
+<div class="do-b"><strong>Fund the infrastructure</strong>
+<span>A few euros a month to any group above buys more privacy than the next tool you'd install. They're funded by individuals precisely so they can't be captured.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">05</div>
+<div class="do-b"><strong>Watch the legislation where you live</strong>
+<span>Scanning mandates and age-verification schemes get reintroduced under new names until one passes. Consultations are usually public, and comments are counted.</span></div>
+</div>
+<div class="do-item">
+<div class="do-num">06</div>
+<div class="do-b"><strong>Contribute capacity, not just money</strong>
+<span>Run a Tor relay, translate documentation, file bug reports, or set up a friend's password manager. Most of this work is unglamorous and chronically short-handed.</span></div>
+</div>
+</div>
+<div class="principle">
+<p>You do not have to become an activist. You do have to stop assuming someone else is
+holding the line, because the people who are, are volunteers, and there aren't many
+of them.</p>
+<cite>Closing note</cite>
+</div>
+</div>
+</div>
+</main>
+</article>
+<aside class="docs-onthis" id="docsOnThis">
+<div class="ot-t">Table of contents</div>
+<nav class="ot-nav" id="otNav"></nav>
+</aside>
+</div>
+<footer class="how-footer">
+<p data-ui-html="footer_warn">[!] TRUST NO ONE &nbsp;|&nbsp; VERIFY EVERYTHING &nbsp;|&nbsp; ASSUME COMPROMISE [!]</p>
+<p class="footer-sig" data-ui="footer_sig">INTELBYTE Knowledge Base</p>
+</footer>
+<button class="btt glass-panel" id="btt" aria-label="Back to top" data-ui-aria="btt_label">
+<i class="fas fa-chevron-up"></i>
+</button>
+<script src="how-i18n2fde.js?k=51996d44a08a224c"></script>
+<script>
+        /* ── INTELBYTE i18n (how.html) ── */
+        (function intelHowI18nInit() {
+            var LANGS = window.INTEL_HOW_I18N;
+            if (!LANGS) return;
+
+            // Pick initial language: saved choice wins, else the visitor's browser
+            // language (VPN-proof, unlike geo-IP) mapped to a supported one, else EN.
+            var SUPPORTED = Object.keys(LANGS);
+            function pickInitialLang() {
+                var saved = localStorage.getItem('intel_lang');
+                if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+                var navs = navigator.languages || [navigator.language || 'en'];
+                for (var i = 0; i < navs.length; i++) {
+                    var code = String(navs[i] || '').slice(0, 2).toLowerCase();
+                    if (SUPPORTED.indexOf(code) !== -1) return code;
+                }
+                return 'en';
+            }
+            var currentLang = pickInitialLang();
+            var btn = document.getElementById('intelLangBtn');
+            var dd = document.getElementById('intelLangDd');
+            var codeEl = document.getElementById('intelLangCode');
+            var wrap = document.getElementById('intelLangWrap');
+            if (!btn || !dd) return;
+
+            function pack(lang) { return LANGS[lang] || LANGS.en; }
+
+            function setTitleText(el, text) {
+                if (!el) return;
+                var icon = el.querySelector('i');
+                el.textContent = '';
+                if (icon) el.appendChild(icon);
+                el.appendChild(document.createTextNode(' ' + text));
+            }
+
+            function applyLang(lang) {
+                var L = pack(lang);
+                currentLang = lang;
+                localStorage.setItem('intel_lang', lang);
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+                if (codeEl) codeEl.textContent = L.code;
+
+                document.querySelectorAll('[data-ui]').forEach(function (el) {
+                    var key = el.dataset.ui;
+                    if (L.ui[key] != null) el.textContent = L.ui[key];
+                });
+                document.querySelectorAll('[data-ui-html]').forEach(function (el) {
+                    var key = el.dataset.uiHtml;
+                    if (L.ui[key] != null) el.innerHTML = L.ui[key];
+                });
+                document.querySelectorAll('[data-ui-aria]').forEach(function (el) {
+                    var key = el.dataset.uiAria;
+                    if (L.ui[key] != null) el.setAttribute('aria-label', L.ui[key]);
+                });
+                document.querySelectorAll('[data-toc]').forEach(function (el) {
+                    var key = el.dataset.toc;
+                    if (L.toc[key] != null) el.textContent = L.toc[key];
+                });
+                document.querySelectorAll('[data-qs]').forEach(function (el) {
+                    var key = el.dataset.qs;
+                    if (L.qs[key] != null) el.textContent = L.qs[key];
+                });
+
+                Object.keys(L.sections).forEach(function (id) {
+                    var sec = document.getElementById(id);
+                    var data = L.sections[id];
+                    if (!sec || !data) return;
+                    var h2 = sec.querySelector('.sec-header-text h2');
+                    var sub = sec.querySelector('.sec-sub');
+                    if (h2 && data.title) h2.textContent = data.title;
+                    if (sub && data.sub) sub.textContent = data.sub;
+                    if (data.steps) {
+                        sec.querySelectorAll('.step-card').forEach(function (card, i) {
+                            var st = data.steps[i];
+                            if (!st) return;
+                            setTitleText(card.querySelector('.step-title'), st.t);
+                            var desc = card.querySelector('.step-desc');
+                            if (desc) desc.innerHTML = st.d;
+                        });
+                    }
+                    if (data.infos) {
+                        sec.querySelectorAll('.info-box > div').forEach(function (el, i) {
+                            if (data.infos[i] != null) el.innerHTML = data.infos[i];
+                        });
+                    }
+                    if (data.attacks) {
+                        sec.querySelectorAll('.attack-card').forEach(function (card, i) {
+                            var a = data.attacks[i];
+                            if (!a) return;
+                            setTitleText(card.querySelector('h4'), a.t);
+                            var p = card.querySelector('p');
+                            if (p) p.textContent = a.d;
+                        });
+                    }
+                });
+
+                dd.querySelectorAll('.intel-lang-opt').forEach(function (o) {
+                    o.classList.toggle('active', o.dataset.lang === lang);
+                });
+                dd.hidden = true;
+            }
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                dd.hidden = !dd.hidden;
+            });
+            document.addEventListener('click', function (e) {
+                if (wrap && !wrap.contains(e.target)) dd.hidden = true;
+            });
+            dd.addEventListener('click', function (e) {
+                var opt = e.target.closest('.intel-lang-opt');
+                if (!opt) return;
+                applyLang(opt.dataset.lang);
+            });
+
+            applyLang(currentLang);
+        })();
+
+        function getScrollY() {
+            return window.scrollY || document.documentElement.scrollTop || 0;
+        }
+
+        window.intelScrollToEl = function (el) {
+            if (!el) return;
+            var y = el.getBoundingClientRect().top + getScrollY() - 88;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        };
+
+        /* ── Step stagger ── */
+        function staggerCards(sec) {
+            const cards = sec.querySelectorAll('.step-card, .attack-card');
+            cards.forEach((card, i) => {
+                card.classList.remove('step-animate');
+                void card.offsetWidth;
+                card.style.animationDelay = (i * 0.055) + 's';
+                card.classList.add('step-animate');
+            });
+        }
+
+        /* ── Accordion ── */
+        function toggleSec(header) {
+            const sec = header.closest('.sec');
+            const wasOpen = sec.classList.contains('open');
+            document.querySelectorAll('.sec.open').forEach(s => {
+                if (s !== sec) s.classList.remove('open');
+            });
+            sec.classList.toggle('open', !wasOpen);
+            if (!wasOpen) setTimeout(() => staggerCards(sec), 80);
+        }
+
+        function openSectionForTarget(target) {
+            const sec = target.closest('.sec') || target;
+            if (sec && sec.classList.contains('sec') && !sec.classList.contains('open')) {
+                document.querySelectorAll('.sec.open').forEach(s => s.classList.remove('open'));
+                sec.classList.add('open');
+                setTimeout(() => staggerCards(sec), 80);
+            }
+        }
+
+        function navigateToHash(hash) {
+            const target = (hash && hash.charAt(0) === '#') ? document.getElementById(hash.slice(1)) : null;
+            if (!target) return;
+            setTocActive(hash);
+            window.intelScrollToEl(target);
+            setTimeout(() => openSectionForTarget(target), 450);
+            history.replaceState(null, '', hash);
+        }
+
+        function setTocActive(hash) {
+            document.querySelectorAll('#tocGrid .ds-link').forEach(l => {
+                l.classList.toggle('active', l.getAttribute('href') === hash);
+            });
+        }
+
+        /* ── Navbar + progress + btt ── */
+        const navbar = document.getElementById('navbar');
+        const readProgress = document.getElementById('readProgress');
+        const btt = document.getElementById('btt');
+
+        function onPageScroll() {
+            const y = getScrollY();
+            navbar.classList.toggle('scrolled', y > 40);
+            if (btt) btt.classList.toggle('show', y > 500);
+            if (readProgress) {
+                const docH = document.documentElement.scrollHeight - window.innerHeight;
+                readProgress.style.width = docH > 0 ? Math.min(100, (y / docH) * 100) + '%' : '0%';
+            }
+        }
+
+        var onScroll = window.intelOnScroll || function (fn) {
+            window.addEventListener('scroll', fn, { passive: true });
+        };
+        onScroll(onPageScroll);
+        onPageScroll();
+
+        if (btt) btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /* ── Scroll reveal ── */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const contentHead = document.querySelector('.content-head');
+        if (contentHead) observer.observe(contentHead);
+        /* Signal to the fail-safe block that the reveal system wired up OK. */
+        window.__ibRevealAlive = 1;
+
+        /* ── TOC spy: IntersectionObserver (offsetTop scroll spam yok) ── */
+        /* NOTE: getElementById, not querySelector; ids like "2fa" start with a
+           digit and are NOT valid CSS selectors, which used to throw here and
+           kill every listener registered after this point (TOC + quick-start). */
+        const byHash = (h) => (h && h.charAt(0) === '#') ? document.getElementById(h.slice(1)) : null;
+        const sections = [...document.querySelectorAll('#tocGrid .ds-link')]
+            .map(l => byHash(l.getAttribute('href'))).filter(Boolean);
+
+        if (sections.length && typeof IntersectionObserver !== 'undefined') {
+            const tocSpy = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) setTocActive('#' + e.target.id);
+                });
+            }, { rootMargin: '-42% 0px -48% 0px', threshold: 0 });
+            sections.forEach(function (sec) { tocSpy.observe(sec); });
+            setTocActive('#' + sections[0].id);
+        }
+
+        /* ── Nav clicks (TOC + quick start) ── */
+        document.querySelectorAll('#tocGrid .ds-link, .qs-jump').forEach(link => {
+            link.addEventListener('click', e => {
+                const hash = link.getAttribute('href');
+                if (!hash || hash === '#') return;
+                e.preventDefault();
+                navigateToHash(hash);
+            });
+        });
+
+        if (location.hash) {
+            setTimeout(() => navigateToHash(location.hash), 400);
+        }
+
+        /* ── Docs shell: right-hand "on this page" + mobile sidebar ── */
+        (function docsShell() {
+            const otNav = document.getElementById('otNav');
+            const side = document.getElementById('docsSide');
+            const scrim = document.getElementById('docsScrim');
+            const toggle = document.getElementById('docsSideToggle');
+
+            /* Mobile drawer */
+            function setDrawer(open) {
+                if (!side) return;
+                side.classList.toggle('open', open);
+                if (scrim) scrim.classList.toggle('show', open);
+            }
+            if (toggle) toggle.addEventListener('click', () => setDrawer(!side.classList.contains('open')));
+            if (scrim) scrim.addEventListener('click', () => setDrawer(false));
+            if (side) side.addEventListener('click', (e) => { if (e.target.closest('a')) setDrawer(false); });
+
+            if (!otNav) return;
+
+            /* Each top-level part owns the headings that follow it, up to the
+               next part. The right rail shows only the active part's headings. */
+            const parts = [...document.querySelectorAll('.docs-body .part')];
+            if (!parts.length) return;
+
+            const groups = parts.map((part, i) => {
+                const next = parts[i + 1] || null;
+                const heads = [];
+                let node = part.nextElementSibling;
+                while (node && node !== next) {
+                    node.querySelectorAll('.kb-h3[id], .rec-cat h3, .sec h2').forEach(h => heads.push(h));
+                    node = node.nextElementSibling;
+                }
+                return { part, heads };
+            });
+
+            function idFor(h, gi, hi) {
+                if (h.id) return h.id;
+                const own = h.closest('.sec, .rec-cat');
+                if (own && own.id) return own.id;
+                const gen = 'h-' + gi + '-' + hi;
+                (own || h).id = (own && !own.id) ? gen : (h.id = gen);
+                return (own && own.id) || h.id;
+            }
+
+            let activeGroup = -1;
+            function renderGroup(gi) {
+                if (gi === activeGroup) return;
+                activeGroup = gi;
+                const g = groups[gi];
+                otNav.innerHTML = '';
+                if (!g) return;
+                g.heads.forEach((h, hi) => {
+                    const id = idFor(h, gi, hi);
+                    const a = document.createElement('a');
+                    a.className = 'ot-link';
+                    a.href = '#' + id;
+                    a.textContent = (h.textContent || '').trim().replace(/\s+/g, ' ');
+                    a.addEventListener('click', (e) => { e.preventDefault(); navigateToHash('#' + id); });
+                    otNav.appendChild(a);
+                });
+            }
+
+            function markActiveHeading() {
+                const links = [...otNav.querySelectorAll('.ot-link')];
+                if (!links.length) return;
+                let best = null;
+                links.forEach(l => {
+                    const t = document.getElementById(l.getAttribute('href').slice(1));
+                    if (!t) return;
+                    const top = t.getBoundingClientRect().top;
+                    if (top <= 160) best = l;
+                });
+                links.forEach(l => l.classList.toggle('active', l === best));
+            }
+
+            function onScroll() {
+                let gi = 0;
+                groups.forEach((g, i) => {
+                    if (g.part.getBoundingClientRect().top <= 200) gi = i;
+                });
+                renderGroup(gi);
+                markActiveHeading();
+            }
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(() => { onScroll(); ticking = false; });
+            }, { passive: true });
+            onScroll();
+        })();
+    </script>
+<script>
+    (function () {
+        function forceReveal() {
+            if (window.__ibRevealAlive) return;
+            try {
+                document.querySelectorAll('.reveal:not(.visible)').forEach(function (el) {
+                    el.classList.add('visible');
+                });
+            } catch (e) {}
+        }
+        window.addEventListener('load', function () { setTimeout(forceReveal, 2200); });
+        setTimeout(forceReveal, 3500);
+    })();
+    </script>
+<!-- ib:0b0f4ac9469d --></body>
+
+<!-- Mirrored from https://www.intelbyte.cc/how by HTTrack Website Copier/3.x [XR&CO], Sat, 21 Nov 2026 12:53:19 GMT -->
+</html>

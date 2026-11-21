@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Changelog | NULLTRACK</title>
+<meta name="description" content="Every update, improvement and fix shipped to NULLTRACK.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NULLTRACK">
+<meta property="og:title" content="NULLTRACK Changelog | What's new">
+<meta property="og:description" content="Every update, improvement and fix shipped to NULLTRACK.">
+<meta property="og:url" content="changelogs.html">
+<meta property="og:image" content="https://nulltrack.com/intelbyte-spy.png">
+<meta name="theme-color" content="#050506">
+<link rel="icon" href="intelbyte-spy2fde.png" type="image/png">
+<link rel="canonical" href="changelogs.html">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Inter:wght@300;400;500&amp;display=swap" />
+<link rel="stylesheet" href="monopo-fontsf8fe.css">
+<link rel="stylesheet" href="__ib/c/070b9ab48a39a0db682a2fde.css">
+<link rel="stylesheet" href="monopo-skinf8fe.css">
+<script type="module" src="monopo-liquidf8fe.js"></script>
+</head>
+<body>
+<div id="monopo-liquid" aria-hidden="true"></div>
+<nav class="navbar" id="navbar">
+<a href="index.html" class="nav-brand">
+<img src="intelbyte-spy2fde.png" alt="" width="34" height="34">
+<span class="nav-brand-text">NULLTRACK</span>
+</a>
+<div class="nav-actions">
+<a href="index.html" class="nav-pill nav-pill--ghost"><i class="fas fa-arrow-left"></i><span>Back</span></a>
+</div>
+</nav>
+<main class="cl">
+<header class="cl-hero">
+<div class="cl-kicker">Changelog</div>
+<h1>What's <i>n</i>ew</h1>
+<p>Every update, improvement and fix shipped to NULLTRACK, newest first.</p>
+<div class="cl-hero-meta" id="clMeta"></div>
+<div class="cl-filters" role="group" aria-label="Filter changes">
+<button type="button" class="cl-filter" data-f="all" aria-pressed="true">All</button>
+<button type="button" class="cl-filter" data-f="new" aria-pressed="false">New</button>
+<button type="button" class="cl-filter" data-f="improved" aria-pressed="false">Improved</button>
+<button type="button" class="cl-filter" data-f="fixed" aria-pressed="false">Fixed</button>
+</div>
+</header>
+<div class="cl-body">
+<aside class="cl-rail" aria-label="Versions">
+<div class="cl-rail-t">Versions</div>
+<ol id="clRail"></ol>
+</aside>
+<div>
+<div class="cl-list" id="clList"></div>
+<p class="cl-empty" id="clEmpty">No changes of this type yet.</p>
+</div>
+</div>
+</main>
+<footer class="cl-foot">
+<span>NULLTRACK · <span id="clYear"></span></span>
+<nav>
+<a href="index.html">Home</a>
+<a href="panel.html">Panel</a>
+<a href="info.html">Info</a>
+<a href="how.html">How</a>
+<a href="help.html">Help</a>
+</nav>
+</footer>
+<script>
+        var CHANGELOG = [
+            {
+                v: '4.3', date: '2026-11-14', title: 'Case Files AI that shows its thinking',
+                summary: 'Watch the AI reason through your case live, see whose PC is really whose, and a cleaner, smarter case board.',
+                groups: {
+                    new: [
+                        '**See how the AI thinks**. While Case Files AI works, its reasoning appears in the chat step by step. Every reply keeps a "What I thought" log you can open any time.',
+                        '**Whose PC is it?** When a case turns up more than one infected PC, the AI checks how much of your case each one shares. It tells you which is the subject\'s own machine and which most likely belongs to someone else.',
+                        '**Site logos on the board**. Usernames, passwords and accounts show the logo of the site they came from.',
+                        '**Smart grouping**. When lots of passwords or emails come with one account, they fold into a single tidy card, like "Passwords · 12". Click it to see each one. New finds glide into their group as the AI adds them.'
+                    ],
+                    improved: [
+                        '**Machine View suggestions**. When a search hits a stealer log, the AI always offers Machine View. It still asks before using a credit.',
+                        '**Infected-PC data is flagged as Risk**. Emails, logins and devices taken from an infected PC are always marked Risk, never Clear.',
+                        '**Smoother board and chat**. Animations stay smooth even with Reduce motion on. AI text fades in word by word, and scrolling up while it works no longer throws you back to the bottom.',
+                        '**Deleting a case**. Pick the case you want to delete, then confirm it by name.',
+                        '**Account security alerts** now fire when your account is opened from a new device on a new IP.',
+                        '**More reliable board updates**. The AI drops far fewer changes on big results.'
+                    ],
+                    fixed: [
+                        '**Importing a case** now brings back its whole board instead of an empty one.',
+                        '**Loose passwords** are linked to the email they were found with, instead of floating on their own.'
+                    ]
+                }
+            },
+            {
+                v: '4.2', date: '2026-11-11', title: 'A smarter NULLTRACK AI',
+                summary: 'NULLTRACK AI runs on a new, more capable model and can now read an entire infected PC, not just its name.',
+                groups: {
+                    new: [
+                        '**New AI model**. Sharper reasoning, better at connecting accounts, and it answers in your language, whatever it is.',
+                        '**Reads the whole PC**. Open a PC in Machine View and the AI reads its autofill, saved logins, cookies and history, then groups every site: banking, crypto, government, education, developer, social, jobs and more.',
+                        '**Ask it anything about the machine**. "Is he signed up to any banks?", "What is his real name and school?", "Is there a LinkedIn or GitHub?" It tells a saved login (an account exists) apart from a page that was only visited.',
+                        '**Real identity from autofill**. Names, emails, phones, cities, schools and profile links the owner typed into forms are pulled out and cross-checked automatically.',
+                        '**Case Files AI sees the PC too**. It maps what it finds onto your board: identity, profile links and relevant accounts, each linked to the machine with a confidence score.'
+                    ],
+                    improved: [
+                        '**Case board animations**. New entities and links appear smoothly, even when the AI adds dozens at once. No more freezing or stutter.',
+                        '**Dashboard greetings** now change with the time of day.',
+                        '**Expandable result rows** open reliably in Stealer Logs and Machine View.',
+                        '**Site protection** strengthened again across accounts, payments and logs.'
+                    ],
+                    fixed: [
+                        '**Replies in the wrong language**. A German or Russian question no longer gets a Turkish answer, and non-Latin replies are no longer cut up.'
+                    ]
+                }
+            },
+            {
+                v: '4.1', date: '2026-11-02', title: 'OSINT Hunt season & deeper searches',
+                summary: 'A rebuilt OSINT Hunt with its hardest mission yet, and more depth on Discord and email searches.',
+                groups: {
+                    new: [
+                        '**OSINT Hunt · Mission 05**. The final and hardest case. Only a handful of agents have cracked it so far.',
+                        '**Mission debriefs**. Clear a mission and see how the case breaks, step by step.',
+                        '**Hunt reward**. Finish all five missions to earn an exclusive Discord role.',
+                        '**New modules added for Discord searches.**'
+                    ],
+                    improved: [
+                        '**OSINT Hunt, redesigned**. New look, a clearer case file, and new certificates.',
+                        '**Fairer missions**. Every mission reworked so the answer has to be earned.',
+                        '**Email search**. More sites checked for registered accounts.'
+                    ],
+                    fixed: [
+                        '**OSINT Hunt progress**. Switching between missions no longer loses what you found.'
+                    ]
+                }
+            },
+            {
+                v: '4.0', date: '2026-10-28', title: 'Themes & IntelX upgrades',
+                summary: 'Make the panel yours, and get more out of IntelX.',
+                groups: {
+                    new: [
+                        '**Themes gallery**. Share your panel look with the community and try other members\' themes.'
+                    ],
+                    improved: [
+                        '**IntelX**. New data source with faster, more complete archives and new search modes.',
+                        '**Machine View downloads**. Full logs download reliably, even very large ones.',
+                        '**Roblox checks** are back online.',
+                        '**Discord roles** now follow the account you link.',
+                        '**Site protection** strengthened across the whole site.'
+                    ]
+                }
+            },
+            {
+                v: '3.9', date: '2026-10-17', title: 'Telegram search & visual case files',
+                summary: 'A new search tab, and case files you can see at a glance.',
+                groups: {
+                    new: [
+                        '**Telegram search**. Look up Telegram accounts by username or ID.',
+                        '**Case Files map**. Your case board is now a visual link map, and the AI can build it with you.'
+                    ]
+                }
+            },
+            {
+                v: '3.8', date: '2026-10-13', title: 'Gaming accounts & Google lookups',
+                summary: 'Two new platforms to search, and more context on every email.',
+                groups: {
+                    new: [
+                        '**Minecraft & Steam search**. Two new tabs for gaming accounts.',
+                        '**Google account insights** on email searches.'
+                    ]
+                }
+            },
+            {
+                v: '3.7', date: '2026-10-01', title: 'Site refresh & changelog',
+                summary: 'The public site gets a cleaner look on every screen, and release notes get a home.',
+                groups: {
+                    new: [
+                        '**Changelog**, this page. Every release in one place, filterable by type.'
+                    ],
+                    improved: [
+                        '**Mobile**. Header, menu, pricing, help desk and knowledge base reworked for phones.',
+                        '**Typography**. Lighter, consistent headings across the whole site.'
+                    ]
+                }
+            },
+            {
+                v: '3.6', date: '2026-09-30', title: 'Domain search, supercharged',
+                summary: 'Pull an entire domain\'s exposure in one go, newest first.',
+                groups: {
+                    new: [
+                        '**Result size picker**. Choose how many rows to pull, from 500 up to 30,000.',
+                        '**Subdomains**. Every subdomain seen in the results, listed in one place.',
+                        '**Domain intel**. Registrar, creation and expiry dates, and nameservers next to the results.'
+                    ],
+                    improved: [
+                        '**Newest first**. Domain results are sorted from the latest leak to the oldest.',
+                        '**More coverage**. Breach, combo and stealer sources are queried in parallel and merged into one list.',
+                        '**No more 1,000 cap**. Large domains page through automatically instead of stopping at the first thousand.'
+                    ]
+                }
+            },
+            {
+                v: '3.5', date: '2026-09-28', title: 'IntelX file tree',
+                summary: 'Open an IntelX archive and walk through it like a real machine.',
+                groups: {
+                    new: [
+                        '**Archive tree**. Paste an IntelX archive ID and browse the whole stealer log as a folder tree, Machine View style.',
+                        '**Instant file preview**. Click any file in the tree to read it. Opened archives are cached, so clicks cost nothing extra.',
+                        '**ZIP download**. Grab the whole archive in one click.'
+                    ],
+                    improved: [
+                        '**Keyword search**. Emails, domains and usernames on IntelX also come back as a browsable tree.',
+                        '**Big archives**. Large exports are retried automatically, and you are told when a result is only partial.'
+                    ],
+                    fixed: [
+                        '**Clear errors**. A busy archive now says so instead of showing a generic failure.'
+                    ]
+                }
+            },
+            {
+                v: '3.4', date: '2026-09-20', title: 'NULLTRACK AI, rebuilt',
+                summary: 'From a chat box to an investigator that works the case with you.',
+                groups: {
+                    new: [
+                        '**Full-screen AI workspace**, with your conversation history in the sidebar and a back button to the panel.',
+                        '**Investigator agent**. The AI runs searches on its own and pivots between them (username → password → related accounts).',
+                        '**Asks before it spends**. Lookups that cost a credit always need your OK first.',
+                        '**Deep mode**. Switch it on and the AI runs a full investigation by itself, reviews its own findings, then writes an analyst-style report.',
+                        '**Live progress**. See every step while the AI is working.'
+                    ],
+                    improved: [
+                        '**Language lock**. The AI answers in the language you wrote in.',
+                        '**Smarter answers**. It reasons about the data instead of filling a template, and never pads with "unknown".',
+                        '**Mobile**. The AI workspace works properly on phones.'
+                    ]
+                }
+            },
+            {
+                v: '3.3', date: '2026-09-15', title: 'Faster support & IntelX back online',
+                summary: 'Quicker answers on tickets, and IntelX search restored.',
+                groups: {
+                    new: [
+                        '**AI first reply on tickets**. Help desk tickets get an instant answer while staff catch up.',
+                        '**Daily AI allowance**. Each plan gets its own daily AI budget.'
+                    ],
+                    fixed: [
+                        '**IntelX search**. "Cannot reach backend" is gone, and archive lookups work again.',
+                        '**Long IntelX files**. Multi-part files no longer time out.'
+                    ]
+                }
+            },
+            {
+                v: '3.2', date: '2026-09-02', title: 'OSINT Hunt refresh & account safety',
+                summary: 'A new look for the Hunt, and a heads-up if your own login ever leaks.',
+                groups: {
+                    new: [
+                        '**Compromised login alerts**. If your NULLTRACK login shows up in a stealer log, you get a private warning in the panel.',
+                        '**Hunt certificate seal**. Finished hunts earn a sealed certificate you can download as an image.'
+                    ],
+                    improved: [
+                        '**OSINT Hunt**, redesigned as a black and white terminal.',
+                        '**Notifications**. Announcements pop once per device, and the red badge stays until you actually read them.',
+                        '**Watchlist**, now checked automatically every 24 hours instead of only on demand.'
+                    ],
+                    fixed: [
+                        '**Hunt level 3**. The final answer can be submitted again.'
+                    ]
+                }
+            },
+            {
+                v: '3.1', date: '2026-08-19', title: 'Free trial searches',
+                summary: 'Try the real thing from the homepage before you buy.',
+                groups: {
+                    new: [
+                        '**Telegram unlock**. Verify once through our Telegram bot to get 5 uncensored homepage searches a day.',
+                        '**Machine previews**. Infected PCs in demo results show up as a downloadable archive preview.'
+                    ],
+                    improved: [
+                        '**AI history**. Your AI conversations are saved and can be reopened later.',
+                        '**Demo results**, with cleaner cards, a trial counter and a clear censored-state banner.'
+                    ]
+                }
+            },
+            {
+                v: '3.0', date: '2026-07-21', title: 'The new NULLTRACK',
+                summary: 'A full redesign of the public site and a new way to sign in.',
+                groups: {
+                    new: [
+                        '**New site design** with a liquid background, new typography and a quieter black and white palette.',
+                        '**Key login**. Sign in with your access key and password, no Discord required.',
+                        '**Roblox safety flags**. Roblox results show whether an account has been flagged.',
+                        '**Homepage showcase** video of the panel in action.'
+                    ],
+                    improved: [
+                        '**Login page**, now available in English and Turkish.',
+                        '**Knowledge base**, with a language switcher.'
+                    ]
+                }
+            },
+            {
+                v: '2.6', date: '2026-07-03', title: 'Machine View, faster',
+                summary: 'Fewer clicks between a Discord ID and the machine behind it.',
+                groups: {
+                    new: [
+                        '**Daily quota counter**. See how many Discord searches you have left today.'
+                    ],
+                    improved: [
+                        '**Discord search** shows the infected PC directly, with no extra unlock step.',
+                        '**Machine View** lists every matching PC and expands them automatically.',
+                        '**Email follow-up**. Emails found inside logs are searched for you automatically.'
+                    ],
+                    fixed: [
+                        '**Email detection**, which sometimes missed addresses in log results.'
+                    ]
+                }
+            },
+            {
+                v: '2.5', date: '2026-06-27', title: 'Stolen info card',
+                summary: 'The most important findings, first.',
+                groups: {
+                    new: [
+                        '**Stolen info card** above the profile, summarizing what leaked.',
+                        '**Gaming platforms**. Linked game accounts are detected and shown on the card.'
+                    ],
+                    improved: [
+                        '**Add to case**, moved into the results header next to the time badge.'
+                    ]
+                }
+            },
+            {
+                v: '2.4', date: '2026-06-21', title: 'Case Board',
+                summary: 'Connect the dots visually.',
+                groups: {
+                    new: [
+                        '**Case Board**, an interactive investigation graph inside the panel.',
+                        '**Security alerts** in the site when your session is taken over, plus an account-sharing warning.'
+                    ]
+                }
+            },
+            {
+                v: '2.3', date: '2026-06-15', title: 'IP intelligence & signups',
+                summary: 'Two new cards on Discord results.',
+                groups: {
+                    new: [
+                        '**IP intelligence** card for addresses found in results.',
+                        '**Website signups** card, one chip per site with real logos.',
+                        '**HWID / MAC change detection** across a machine\'s logs.'
+                    ]
+                }
+            },
+            {
+                v: '2.2', date: '2026-06-12', title: 'Security hardening',
+                summary: 'Under-the-hood work to keep accounts safe.',
+                groups: {
+                    new: [
+                        '**Access plans checkout**, with a new payment screen.'
+                    ],
+                    improved: [
+                        '**Single active session** per account.',
+                        '**Panel API**, hardened across every route.',
+                        '**Homepage**, now lighter and faster to load.'
+                    ]
+                }
+            },
+            {
+                v: '2.1', date: '2026-05-29', title: 'Help desk & homepage redesign',
+                summary: 'Support without leaving the site.',
+                groups: {
+                    new: [
+                        '**Help desk**. Open and follow support tickets right on the site.'
+                    ],
+                    improved: [
+                        '**Navigation**, with a redesigned floating navbar and account menu.',
+                        '**Checkout**, with a redesigned modal.',
+                        '**Homepage**, with a new FAQ, live community card and buyer reviews.'
+                    ]
+                }
+            },
+            {
+                v: '2.0', date: '2026-05-26', title: 'Hello, NULLTRACK',
+                summary: 'The rebrand, and the panel it came with.',
+                groups: {
+                    new: [
+                        '**NULLTRACK**, a new name, logo and noir look across the site.',
+                        '**Panel**, redesigned with a fixed sidebar.',
+                        '**Machine View**, a file viewer for stealer logs.',
+                        '**Masked previews**. The homepage leak check hides the sensitive middle of every value.'
+                    ],
+                    improved: [
+                        '**OSINT Hunt**, restyled to match the new brand.'
+                    ]
+                }
+            }
+        ];
+
+        (function () {
+            var LABEL = { new: 'New', improved: 'Improved', fixed: 'Fixed' };
+            var ORDER = ['new', 'improved', 'fixed'];
+            var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+            function esc(s) {
+                return String(s).replace(/[&<>"']/g, function (c) {
+                    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+                });
+            }
+            function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
+            function fmt(d) {
+                var p = d.split('-');
+                return MONTHS[+p[1] - 1] + ' ' + (+p[2]) + ', ' + p[0];
+            }
+            function slug(v) { return 'v' + v.replace(/\./g, '-'); }
+
+            var list = document.getElementById('clList');
+            var rail = document.getElementById('clRail');
+            var counts = { all: 0, new: 0, improved: 0, fixed: 0 };
+            var html = '', railHtml = '';
+
+            CHANGELOG.forEach(function (e, i) {
+                var groups = '';
+                ORDER.forEach(function (k) {
+                    var items = e.groups[k];
+                    if (!items || !items.length) return;
+                    counts[k] += items.length; counts.all += items.length;
+                    groups += '<div class="cl-group" data-k="' + k + '">' +
+                        '<span class="cl-tag cl-tag--' + k + '">' + LABEL[k] + '</span>' +
+                        '<ul class="cl-items">' + items.map(function (t) { return '<li>' + rich(t) + '</li>'; }).join('') + '</ul></div>';
+                });
+                html += '<article class="cl-entry" id="' + slug(e.v) + '">' +
+                    '<div class="cl-entry-head"><span class="cl-ver">v' + esc(e.v) + '</span>' +
+                    '<time class="cl-date" datetime="' + esc(e.date) + '">' + fmt(e.date) + '</time></div>' +
+                    '<h2>' + esc(e.title) + '</h2>' +
+                    (e.summary ? '<p class="cl-summary">' + esc(e.summary) + '</p>' : '') +
+                    '<div class="cl-card">' + groups + '</div></article>';
+                railHtml += '<li><a href="#' + slug(e.v) + '" data-v="' + slug(e.v) + '"><span>v' + esc(e.v) +
+                    (i === 0 ? '<span class="cl-new">New</span>' : '') + '</span><small>' + esc(e.date.slice(5).replace('-', '.')) + '</small></a></li>';
+            });
+            list.innerHTML = html;
+            rail.innerHTML = railHtml;
+
+            var latest = CHANGELOG[0];
+            document.getElementById('clMeta').innerHTML =
+                '<span>Latest <b>v' + esc(latest.v) + '</b></span>' +
+                '<span>Updated <b>' + fmt(latest.date) + '</b></span>' +
+                '<span><b>' + CHANGELOG.length + '</b> releases</span>';
+            document.getElementById('clYear').textContent = new Date().getFullYear();
+
+            document.querySelectorAll('.cl-filter').forEach(function (b) {
+                var n = counts[b.dataset.f];
+                if (n) b.insertAdjacentHTML('beforeend', '<span>' + n + '</span>');
+            });
+
+            /* filter by change type */
+            var entries = [].slice.call(list.querySelectorAll('.cl-entry'));
+            document.querySelector('.cl-filters').addEventListener('click', function (ev) {
+                var btn = ev.target.closest('.cl-filter');
+                if (!btn) return;
+                var f = btn.dataset.f;
+                document.querySelectorAll('.cl-filter').forEach(function (x) { x.setAttribute('aria-pressed', x === btn ? 'true' : 'false'); });
+                var shown = 0;
+                entries.forEach(function (en) {
+                    var any = false;
+                    en.querySelectorAll('.cl-group').forEach(function (g) {
+                        var on = f === 'all' || g.dataset.k === f;
+                        g.hidden = !on; if (on) any = true;
+                    });
+                    en.hidden = !any;
+                    rail.querySelector('[data-v="' + en.id + '"]').parentNode.hidden = !any;
+                    if (any) { shown++; en.classList.add('is-in'); }
+                });
+                document.getElementById('clEmpty').classList.toggle('show', !shown);
+            });
+
+            /* reveal + scroll-spy */
+            var railLinks = [].slice.call(rail.querySelectorAll('a'));
+            function setActive(id) {
+                railLinks.forEach(function (a) {
+                    var on = a.dataset.v === id;
+                    a.classList.toggle('is-active', on);
+                    if (on && window.matchMedia('(max-width: 860px)').matches) {
+                        var ol = rail;
+                        ol.scrollTo({ left: a.parentNode.offsetLeft - 18, behavior: 'smooth' });
+                    }
+                });
+            }
+            if ('IntersectionObserver' in window) {
+                var rev = new IntersectionObserver(function (xs) {
+                    xs.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('is-in'); rev.unobserve(x.target); } });
+                }, { rootMargin: '0px 0px -8% 0px' });
+                entries.forEach(function (en) { rev.observe(en); });
+                var spy = new IntersectionObserver(function (xs) {
+                    xs.forEach(function (x) { if (x.isIntersecting) setActive(x.target.id); });
+                }, { rootMargin: '-35% 0px -60% 0px' });
+                entries.forEach(function (en) { spy.observe(en); });
+            } else {
+                entries.forEach(function (en) { en.classList.add('is-in'); });
+            }
+            setActive(entries[0] && entries[0].id);
+
+            /* header state */
+            var nav = document.getElementById('navbar');
+            function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 24); }
+            window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+        })();
+    </script>
+</body>
+</html>

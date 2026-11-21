@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSINT Hunt · NULLTRACK</title>
+<meta name="description" content="NULLTRACK OSINT Hunt. Fictional investigations that teach real open-source intelligence skills: search leaks, follow the trail, prove the identity.">
+<link rel="icon" href="intelbyte-spya63e.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script src="assets/hunt-html2canvasd786.js" defer></script>
+<link rel="stylesheet" href="monopo-fonts0745.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="monopo-skinf8fe.css">
+<script type="module" src="monopo-liquid0745.js"></script>
+<link rel="stylesheet" href="__ib/c/4c10d95cc9c95890d6732fde.css">
+</head>
+<body>
+<div id="monopo-liquid" aria-hidden="true"></div>
+<div class="hx-vignette" aria-hidden="true"></div>
+<header class="hx-nav" id="huntNav">
+<a href="index.html" class="hx-brand">
+<img src="intelbyte-spy18ec.png" alt="" width="34" height="34" draggable="false">
+<span>NULLTRACK</span>
+</a>
+<nav class="hx-nav-links" aria-label="Site">
+<a href="panel.html">panel</a>
+<a href="hunt.html" class="is-current"><i>o</i>sint hunt</a>
+<a href="changelogs.html">ch<i>a</i>ngelogs</a>
+<a href="how.html">h<i>o</i>w</a>
+<a href="help.html">help</a>
+</nav>
+</header>
+<div class="hunt-boot-loader" id="huntBootLoader" aria-live="polite">Loading session</div>
+<section id="viewGuest" class="view active">
+<div class="hx-wrap hx-hero">
+<div class="hx-kicker">NULLTRACK · Training ground</div>
+<h1 class="hx-hero-title"><i>O</i>SINT<br>Hunt</h1>
+<p class="hx-hero-lead">Fictional cases, real investigation skills. Start with one clue and follow the leaks until you can prove who someone is.</p>
+<div class="hx-hero-cta">
+<a href="#" class="hx-btn hx-btn--solid" id="btnLogin">Login with Discord</a>
+<a href="#" class="hx-link" id="btnKeyLogin">or log in with your NULLTRACK key</a>
+</div>
+<div class="hx-hero-facts">
+<span><b>05</b>missions live</span>
+<span><b>100%</b>fictional data</span>
+<span><b>01</b>certificate per mission</span>
+<span><b>Free</b>for every account</span>
+</div>
+</div>
+<div class="hx-wrap hx-section">
+<div class="hx-section-head">
+<h2 class="hx-h2">How it <i>works</i></h2>
+<span class="hx-kicker">Three steps per case</span>
+</div>
+<div class="hx-steps">
+<div class="hx-step">
+<span class="hx-step-num">01</span>
+<h3>Read the <i>case</i></h3>
+<p>You get a subject, a starting clue and a goal, like "find her email and Instagram".</p>
+</div>
+<div class="hx-step">
+<span class="hx-step-num">02</span>
+<h3>Search the <i>leaks</i></h3>
+<p>Search a fictional breach database from a terminal. Every result can lead to the next email, username or password.</p>
+<code>osint username Marwick12</code>
+</div>
+<div class="hx-step">
+<span class="hx-step-num">03</span>
+<h3>Prove it, get <i>certified</i></h3>
+<p>Submit what you found. Skip decoys, avoid guesses, and earn a certificate for each mission.</p>
+</div>
+</div>
+</div>
+<div class="hx-wrap hx-section" style="padding-top:0">
+<div class="hx-section-head">
+<h2 class="hx-h2">The <i>missions</i></h2>
+<span class="hx-kicker">Unlock in order</span>
+</div>
+<div class="hx-missions" id="guestMissions"></div>
+</div>
+</section>
+<section id="viewHub" class="view">
+<div class="hx-wrap hx-hub">
+<div class="hx-hub-head">
+<div>
+<div class="hx-kicker">OSINT Hunt · Operation board</div>
+<h1 class="hx-hub-title">Welcome, <i id="hubUserName">agent</i></h1>
+<p class="hx-hub-sub" id="hubSub">Pick a mission to start. Each one unlocks after you clear the one before it.</p>
+</div>
+<div class="hx-progress">
+<div class="hx-progress-num" id="hubProgressNum">0<small> / 4</small></div>
+<div class="hx-progress-bar"><div class="hx-progress-fill" id="hubProgressFill"></div></div>
+<div class="hx-progress-label" id="hubProgress">missions cleared</div>
+<div class="hx-hub-actions">
+<button type="button" class="hx-btn hx-btn--sm hx-btn--ghost" data-open-tutorial>How to play</button>
+</div>
+</div>
+</div>
+<div class="hx-missions" id="roadmap"></div>
+<p class="hx-hub-foot">All data is fictional and the same for every player. No real people are involved.</p>
+</div>
+</section>
+<section id="viewPlay" class="view">
+<header class="hx-playbar">
+<button type="button" class="play-back" id="btnBackHub" aria-label="Back to missions">
+<span aria-hidden="true">←</span> Missions
+</button>
+<div class="hx-playbar-title">
+<span class="hx-playbar-level" id="playLevel">LEVEL 01</span>
+<span class="hx-playbar-name" id="playObjective">…</span>
+</div>
+<div class="hx-playbar-tools">
+<button type="button" class="hx-icon-btn" id="btnCaseToggle" aria-expanded="false">Case file</button>
+<button type="button" class="hx-icon-btn" data-open-tutorial title="How to play">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+<span class="hx-label">How to play</span>
+</button>
+<button type="button" class="hx-icon-btn" id="btnSound" title="Keyboard sounds" aria-pressed="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="snd-wave" d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>
+</button>
+</div>
+</header>
+<div class="hx-play" id="playGrid">
+<aside class="hx-pane hx-case" aria-label="Case file">
+<div class="hx-pane-head"><h2>Case file</h2><span class="hx-kicker" id="caseCode"></span></div>
+<div class="hx-pane-body" id="caseFile"></div>
+</aside>
+<main class="hx-pane hx-term">
+<div class="hx-pane-head">
+<span class="hx-term-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+<span class="hx-term-title" id="termTitle">Terminal</span>
+<button type="button" class="hx-term-head-btn" id="btnTermClear" title="Clear screen">clear</button>
+</div>
+<div class="terminal-out copy-safe" id="terminalOut" aria-live="polite"></div>
+<div class="hx-term-dock">
+<div class="hx-chips" id="cmdChips" aria-label="Command shortcuts"></div>
+<form class="terminal-in-wrap" id="termForm" autocomplete="off">
+<span class="prompt" id="termPrompt">hunt@L1 $</span>
+<input type="text" id="termInput" spellcheck="false" autocomplete="off" autocapitalize="off" enterkeyhint="send" aria-label="Terminal command" placeholder="type a command, e.g. osint username …">
+<button type="submit" class="hx-run">Run</button>
+</form>
+</div>
+</main>
+</div>
+</section>
+<div class="hunt-txt-popup" id="huntTxtPopup" hidden aria-hidden="true">
+<div class="hunt-txt-panel" role="dialog" aria-labelledby="huntTxtPopupTitle">
+<div class="hunt-txt-panel-head">
+<span class="hunt-txt-panel-title" id="huntTxtPopupTitle">file.txt</span>
+<button type="button" class="hunt-txt-panel-close" id="huntTxtPopupClose" title="Close" aria-label="Close">✕</button>
+</div>
+<pre class="hunt-txt-panel-body" id="huntTxtPopupBody"></pre>
+</div>
+</div>
+<div class="hx-toast" id="huntToast" role="status" aria-live="polite"></div>
+<script>
+        // On met juste le script minimum pour que la page s'affiche proprement
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.getElementById('huntNav');
+            if (nav) nav.classList.remove('hx-nav--hidden');
+        });
+    </script>
+</body>
+</html>

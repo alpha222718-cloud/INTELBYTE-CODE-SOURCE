@@ -1,0 +1,466 @@
+/* ==========================================================================
+   Case files — final ("Intelbyte native", glass-tuned)
+   Mirrors the site's own components: dashboard .card surfaces + stat-ico tiles,
+   the AI composer's frosted pill, the AI hero mascot disc with a soft glow,
+   white pill primary buttons, Roobert 300/400 sentence case.
+   One glass cue everywhere: a neutral frosted fill, a 1px hairline rim and a
+   faint 1px top specular. No colour tints, no rings, no corner brackets.
+   CSS only. Injected last.
+   ========================================================================== */
+
+:root {
+    --nv-glass: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025));
+    --nv-glass-hover: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.035));
+    --nv-base: rgba(14,14,18,0.42);
+    --nv-edge: rgba(255,255,255,0.12);
+    --nv-edge-2: rgba(255,255,255,0.24);
+    --nv-hl: inset 0 1px 0 rgba(255,255,255,0.11);
+    --nv-spec: inset 0 1px 0 rgba(255,255,255,0.16);
+    --nv-line: rgba(255,255,255,0.07);
+    --nv-text: #f4f4f5;
+    --nv-dim: rgba(255,255,255,0.62);
+    --nv-faint: rgba(255,255,255,0.42);
+    --nv-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --nv-font: 'Roobert', 'Inter', sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   1. Window — transparent glass over the Settings wallpaper
+   -------------------------------------------------------------------------- */
+body.case-open .shell,
+body.case-open .ai-fab,
+body.case-open #aiFab { visibility: hidden !important; }
+
+#caseFolderPopup.case-folder-popup-overlay {
+    padding: 0 !important;
+    /* light blur so the wallpaper stays recognisable; the tint carries legibility
+       (and a small radius stays cheap over a video wallpaper) */
+    background: rgba(6,6,8,0.5) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(1) !important;
+    backdrop-filter: blur(10px) saturate(1) !important;
+    visibility: visible;
+}
+#caseFolderPopup .case-folder-popup {
+    width: 100vw !important; height: 100dvh !important; max-height: 100dvh !important;
+    border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+    /* the overlay is the backdrop root and already blurs the page: no second filter */
+    -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+    background:
+        radial-gradient(900px 420px at 50% -6%, rgba(255,255,255,0.05), transparent 70%),
+        transparent !important;
+    font-family: var(--nv-font) !important;
+    color: var(--nv-text);
+}
+#caseFolderPopup .case-folder-popup::before { display: none !important; }
+
+/* header */
+#caseFolderPopup .cfp-header {
+    /* child backdrop-filters can't reach the wallpaper: text chrome gets density by fill */
+    background: linear-gradient(180deg, rgba(8,8,10,0.34), rgba(8,8,10,0.18)) !important;
+    border-bottom: 1px solid var(--nv-line) !important;
+    padding: 14px 22px !important;
+    gap: 14px !important;
+}
+#caseFolderPopup .cfp-header-left { gap: 13px !important; }
+#caseFolderPopup .cfp-header-icon {
+    position: relative; overflow: hidden;
+    width: 40px !important; height: 40px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 50% 32%, rgba(255,255,255,0.16), rgba(255,255,255,0.035) 72%), var(--nv-base) !important;
+    border: 1px solid var(--nv-edge) !important;
+    box-shadow: var(--nv-spec), 0 0 26px rgba(255,255,255,0.05) !important;
+    color: rgba(255,255,255,0.7) !important;
+    font-size: 14px !important;
+}
+/* photo: the hub's back-light (centre glow fading to dark), so one photo reads
+   the same in the header, the kanban and on the board (opaque photos cover it) */
+#caseFolderPopup .cfp-header-icon.has-photo {
+    background: radial-gradient(circle closest-side at 50% 46%, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.25) 52%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.035) 100%), #111115 !important;
+    border-color: rgba(255,255,255,0.14) !important;
+}
+/* photo failed to load (onerror swapped in an <i> but .has-photo stays): back to
+   the no-photo glass coin so the white spy mark doesn't wash out */
+#caseFolderPopup .cfp-header-icon.has-photo:not(:has(img)) {
+    background: radial-gradient(circle at 50% 32%, rgba(255,255,255,0.16), rgba(255,255,255,0.035) 72%), var(--nv-base) !important;
+    border-color: var(--nv-edge) !important;
+}
+#caseFolderPopup .cfp-header-icon img { border-radius: 50%; object-fit: cover; }
+/* no photo (or a photo that failed): the Intelbyte spy mark, like the hub */
+#caseFolderPopup .cfp-header-icon > i {
+    width: 22px; height: 22px; font-size: 0 !important;
+    background: url('intelbyte-spy2fde.png?k=51996d44a08a224c') center / contain no-repeat;
+    filter: invert(1) brightness(1.05);
+    opacity: 0.92;
+}
+#caseFolderPopup .cfp-header-icon > i::before { content: none !important; }
+#caseFolderPopup .cfp-header-title {
+    font: 400 18px/1.2 var(--nv-font) !important;
+    letter-spacing: -0.01em !important;
+    color: var(--nv-text) !important;
+}
+#caseFolderPopup .cfp-header-meta {
+    font: 300 12.5px/1.3 var(--nv-font) !important;
+    letter-spacing: 0 !important;
+    color: var(--nv-faint) !important;
+    margin-top: 3px !important;
+}
+
+/* Items / Board — the AI composer's frosted pill; active = glass fill + hairline
+   (the site's selection state; a white pill is reserved for primary actions) */
+#caseFolderPopup .cfp-view-toggle {
+    margin-left: auto !important; margin-right: 0 !important;
+    display: inline-flex !important; align-items: center !important;
+    gap: 2px !important; padding: 3px !important;
+    border-radius: 999px !important;
+    background: var(--nv-glass), var(--nv-base) !important;
+    border: 1px solid var(--nv-edge) !important;
+    box-shadow: var(--nv-spec), 0 18px 60px -24px rgba(0,0,0,0.9) !important;
+}
+#caseFolderPopup .cfp-seg {
+    height: 32px; box-sizing: border-box;
+    display: inline-flex !important; align-items: center !important; gap: 8px !important;
+    padding: 0 15px !important;
+    border: 0 !important; border-radius: 999px !important;
+    background: transparent !important;
+    color: var(--nv-dim) !important;
+    font: 400 13px/1 var(--nv-font) !important;
+    letter-spacing: 0 !important; text-transform: none !important;
+    box-shadow: none !important;
+    transition: background .25s var(--nv-ease), color .25s var(--nv-ease), box-shadow .25s var(--nv-ease) !important;
+}
+#caseFolderPopup .cfp-seg i { font-size: 11px !important; opacity: 0.75 !important; }
+#caseFolderPopup .cfp-seg:hover { color: var(--nv-text) !important; background: rgba(255,255,255,0.05) !important; }
+#caseFolderPopup .cfp-seg.active,
+#caseFolderPopup .cfp-seg.active:hover {
+    color: #fff !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08)) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 0 0 1px rgba(255,255,255,0.12) !important;
+}
+#caseFolderPopup .cfp-seg.active i { opacity: 1 !important; color: #fff !important; }
+
+/* close — same glass, round */
+#caseFolderPopup .case-popup-close {
+    width: 40px !important; height: 40px !important;
+    margin-left: 4px !important;
+    border-radius: 50% !important;
+    background: var(--nv-glass), var(--nv-base) !important;
+    border: 1px solid var(--nv-edge) !important;
+    box-shadow: var(--nv-spec) !important;
+    color: var(--nv-dim) !important;
+    font-size: 13px !important;
+    transition: background .25s var(--nv-ease), color .25s var(--nv-ease), border-color .25s var(--nv-ease) !important;
+}
+#caseFolderPopup .case-popup-close:hover {
+    background: var(--nv-glass-hover), var(--nv-base) !important;
+    border-color: var(--nv-edge-2) !important;
+    color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Items view
+   -------------------------------------------------------------------------- */
+#caseFolderPopup .cfp-left {
+    background: rgba(8,8,10,0.3) !important;
+    border-right: 1px solid var(--nv-line) !important;
+}
+#caseFolderPopup .cfp-left-header,
+#caseFolderPopup .cfp-right-header {
+    padding: 18px 22px 12px !important;
+    gap: 10px !important;
+    border-bottom: 0 !important;
+    font: 400 13px/1 var(--nv-font) !important;
+    letter-spacing: 0 !important; text-transform: none !important;
+    color: var(--nv-dim) !important;
+}
+#caseFolderPopup .cfp-left-header i,
+#caseFolderPopup .cfp-right-header i { font-size: 11px !important; color: var(--nv-faint) !important; }
+/* notes: framed as its own glass card */
+#caseFolderPopup .cfp-notes-area {
+    margin: 0 14px !important; width: auto !important;
+    padding: 14px 16px !important;
+    border-radius: 16px !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015)), rgba(14,14,18,0.3) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.07) !important;
+    font: 300 14px/1.7 var(--nv-font) !important;
+    color: rgba(255,255,255,0.86) !important;
+    transition: border-color .2s var(--nv-ease), background .2s var(--nv-ease);
+}
+#caseFolderPopup .cfp-notes-area:focus { border-color: rgba(255,255,255,0.2) !important; }
+#caseFolderPopup .cfp-notes-area::placeholder { color: var(--nv-faint) !important; opacity: 1 !important; }
+#caseFolderPopup .cfp-notes-foot {
+    padding: 14px 14px 16px 22px !important;
+    border-top: 0 !important;
+}
+#caseFolderPopup .cfp-notes-status { font: 300 12px/1.2 var(--nv-font) !important; color: var(--nv-faint) !important; }
+/* Save — white pill primary */
+#caseFolderPopup .cfp-notes-foot .search-btn {
+    height: 34px; padding: 0 18px !important; gap: 8px !important;
+    border-radius: 999px !important;
+    background: #fff !important; color: #050505 !important; border: 1px solid #fff !important;
+    font: 400 13px/1 var(--nv-font) !important; letter-spacing: 0 !important;
+}
+#caseFolderPopup .cfp-notes-foot .search-btn i { font-size: 11px !important; color: #050505 !important; }
+#caseFolderPopup .cfp-notes-foot .search-btn:hover { background: #ececec !important; border-color: #ececec !important; }
+
+#caseFolderPopup .cfp-right-body { padding: 2px 22px 28px !important; }
+#caseFolderPopup .cfp-items-grid { gap: 12px !important; }
+#caseFolderPopup .cfp-item-card,
+#caseItemPopup .case-popup-card {
+    border-radius: 20px !important;
+    border: 1px solid rgba(255,255,255,0.09) !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.016)), rgba(14,14,18,0.42) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+#caseFolderPopup .cfp-item-card:hover { border-color: rgba(255,255,255,0.16) !important; }
+#caseFolderPopup .cfp-item-card-header {
+    padding: 14px 18px !important;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+#caseFolderPopup .cfp-item-card-title {
+    gap: 12px !important;
+    font: 400 14px/1.2 var(--nv-font) !important;
+    color: var(--nv-text) !important;
+}
+/* the stat-ico tile */
+#caseFolderPopup .cfp-item-card-title i {
+    font-weight: 400 !important;
+    width: 30px; height: 30px; flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.055);
+    font-size: 11.5px !important;
+    color: var(--nv-dim) !important;
+}
+#caseFolderPopup .cfp-item-card-date { font: 300 12px/1 var(--nv-font) !important; color: var(--nv-faint) !important; letter-spacing: 0 !important; font-variant-numeric: tabular-nums; }
+#caseFolderPopup .cfp-item-card-body { padding: 6px 18px 4px !important; }
+#caseFolderPopup .cfp-kv,
+#caseItemPopup .cfp-kv {
+    grid-template-columns: 128px minmax(0, 1fr) auto !important;
+    align-items: baseline !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+}
+#caseFolderPopup .cfp-kv:last-child,
+#caseItemPopup .cfp-kv:last-child { border-bottom: 0 !important; }
+#caseFolderPopup .cfp-kv-k,
+#caseItemPopup .cfp-kv-k {
+    font: 300 13px/1.45 var(--nv-font) !important;
+    letter-spacing: 0 !important; text-transform: none !important;
+    color: rgba(255,255,255,0.52) !important;
+}
+#caseFolderPopup .cfp-kv-v,
+#caseItemPopup .cfp-kv-v {
+    font: 400 13.5px/1.45 var(--nv-font) !important;
+    color: rgba(255,255,255,0.92) !important;
+}
+#caseFolderPopup .cfp-kv-pw,
+#caseItemPopup .cfp-kv-pw { font: 400 12.5px/1.45 'JetBrains Mono', monospace !important; color: #efc2c2 !important; }
+#caseFolderPopup .cfp-kv-summary,
+#caseItemPopup .cfp-kv-summary {
+    margin: 8px 0 2px !important;
+    font: 300 13px/1.3 var(--nv-font) !important;
+    letter-spacing: 0 !important;
+    color: var(--nv-dim) !important;
+}
+#caseFolderPopup .cfp-rec { border-radius: 14px !important; border-color: rgba(255,255,255,0.06) !important; }
+#caseFolderPopup .cfp-item-card-actions { padding: 2px 18px 14px !important; }
+/* Remove — ghost pill */
+#caseFolderPopup .cfp-item-card-actions .case-item-remove-sm {
+    width: auto !important; height: 30px; padding: 0 14px !important; gap: 7px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    background: transparent !important;
+    color: var(--nv-dim) !important;
+    font: 300 12px/1 var(--nv-font) !important;
+}
+#caseFolderPopup .cfp-item-card-actions .case-item-remove-sm:hover { background: #fff !important; color: #000 !important; border-color: #fff !important; }
+#caseFolderPopup .cfp-empty { font: 300 13.5px/1.6 var(--nv-font) !important; color: var(--nv-faint) !important; }
+
+/* --------------------------------------------------------------------------
+   5. Overview kanban cards — light touch
+   -------------------------------------------------------------------------- */
+#casefilesFolders .cf-card {
+    padding: 14px 16px 13px !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255,255,255,0.09) !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)), rgba(12,12,15,0.36) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(1.1) !important;
+    backdrop-filter: blur(16px) saturate(1.1) !important;
+}
+#casefilesFolders .cf-card:hover { border-color: rgba(255,255,255,0.17) !important; }
+#casefilesFolders .cf-card-head { gap: 11px !important; }
+/* avatar: subject photo, or the Intelbyte spy mark (same mark as the header + hub) */
+#casefilesFolders .cf-card-avatar {
+    width: 28px !important; height: 28px !important;
+    border: 1px solid rgba(255,255,255,0.11) !important;
+    background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.14), rgba(255,255,255,0.035) 72%) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1) !important;
+    font-size: 0 !important;
+    color: transparent !important;
+}
+#casefilesFolders .cf-card-avatar:not(:has(img))::before {
+    content: "" !important;
+    width: 15px; height: 15px;
+    background: url('intelbyte-spy2fde.png?k=51996d44a08a224c') center / contain no-repeat;
+    filter: invert(1) brightness(1.05);
+    opacity: 0.9;
+}
+/* photo: the hub's back-light, same as the header avatar */
+#casefilesFolders .cf-card-avatar.has-photo {
+    background: radial-gradient(circle closest-side at 50% 46%, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.25) 52%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.035) 100%), #111115 !important;
+    border-color: rgba(255,255,255,0.14) !important;
+}
+/* photo failed (onerror removed the img, .has-photo stays): the no-photo coin */
+#casefilesFolders .cf-card-avatar.has-photo:not(:has(img)) {
+    background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.14), rgba(255,255,255,0.035) 72%) !important;
+    border-color: rgba(255,255,255,0.11) !important;
+}
+#casefilesFolders .cf-card-avatar img { object-fit: cover; }
+#casefilesFolders .cf-card-title { font: 400 14px/1.2 var(--nv-font) !important; letter-spacing: -0.005em !important; }
+#casefilesFolders .cf-card-when { font: 300 11.5px/1 var(--nv-font) !important; color: rgba(255,255,255,0.48) !important; }
+#casefilesFolders .cf-card-line { font: 300 13px/1.35 var(--nv-font) !important; color: rgba(255,255,255,0.78) !important; }
+#casefilesFolders .cf-card-meta { font: 300 12px/1.2 var(--nv-font) !important; color: rgba(255,255,255,0.48) !important; }
+
+/* --------------------------------------------------------------------------
+   6. Add-node / pick / item modals
+   -------------------------------------------------------------------------- */
+#cfpNmOverlay, #cfpPickOverlay {
+    background: rgba(4,4,6,0.42) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
+    backdrop-filter: blur(14px) saturate(1.1) !important;
+}
+#cfpNmOverlay .cfp-nm-card,
+#cfpPickOverlay .cfp-nm-card {
+    padding: 22px 22px 20px !important;
+    border-radius: 22px !important;
+    background: var(--nv-glass), rgba(14,14,18,0.8) !important;
+    border: 1px solid var(--nv-edge) !important;
+    box-shadow: var(--nv-spec), 0 40px 100px -30px rgba(0,0,0,0.95) !important;
+    font-family: var(--nv-font) !important;
+}
+#cfpNmOverlay .cfp-nm-card { width: 400px !important; }
+#cfpNmOverlay .cfp-nm-title,
+#cfpPickOverlay .cfp-nm-title {
+    font: 400 18px/1.2 var(--nv-font) !important;
+    letter-spacing: -0.01em !important;
+    color: var(--nv-text) !important;
+    margin-bottom: 6px !important;
+}
+#cfpNmOverlay .cfp-nm-card label {
+    font: 400 12.5px/1 var(--nv-font) !important;
+    letter-spacing: 0 !important; text-transform: none !important;
+    color: var(--nv-dim) !important;
+    margin: 16px 0 8px !important;
+}
+#cfpNmOverlay .cfp-nm-card input,
+#cfpNmOverlay .cfp-nm-card select {
+    height: 44px; box-sizing: border-box;
+    padding: 0 14px !important;
+    border-radius: 12px !important;
+    background-color: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: var(--nv-text) !important;
+    font: 300 14px/1 var(--nv-font) !important;
+    transition: border-color .2s var(--nv-ease), background-color .2s var(--nv-ease);
+}
+#cfpNmOverlay .cfp-nm-card input::placeholder { color: var(--nv-faint) !important; }
+#cfpNmOverlay .cfp-nm-card input:focus,
+#cfpNmOverlay .cfp-nm-card select:focus {
+    border-color: rgba(255,255,255,0.28) !important;
+    background-color: rgba(255,255,255,0.06) !important;
+}
+#cfpNmOverlay .cfp-nm-card select {
+    -webkit-appearance: none; appearance: none;
+    padding-right: 38px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='rgba(255,255,255,0.55)' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 15px center !important;
+}
+#cfpNmOverlay .cfp-nm-card select option { background: #141418; color: #f4f4f5; }
+#cfpNmOverlay .cfp-nm-actions,
+#cfpPickOverlay .cfp-nm-actions { gap: 8px !important; margin-top: 22px !important; }
+#cfpNmOverlay .cfp-nm-actions button,
+#cfpPickOverlay .cfp-nm-actions button,
+#cfpPickOverlay .cfp-pick-row .cfp-board-btn {
+    height: 36px; padding: 0 18px !important;
+    border-radius: 999px !important;
+    font: 400 13px/1 var(--nv-font) !important;
+    letter-spacing: 0 !important;
+}
+#cfpNmOverlay .cfp-nm-actions .cfp-board-btn,
+#cfpPickOverlay .cfp-nm-actions .cfp-board-btn,
+#cfpPickOverlay .cfp-pick-row .cfp-board-btn {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.16) !important;
+    color: var(--nv-text) !important;
+}
+#cfpNmOverlay .cfp-nm-actions .cfp-board-btn:hover,
+#cfpPickOverlay .cfp-nm-actions .cfp-board-btn:hover,
+#cfpPickOverlay .cfp-pick-row .cfp-board-btn:hover { background: rgba(255,255,255,0.07) !important; }
+#cfpNmOverlay .cfp-nm-actions .search-btn,
+#cfpPickOverlay .cfp-nm-actions .search-btn {
+    background: #fff !important; color: #050505 !important; border: 1px solid #fff !important;
+}
+#cfpNmOverlay .cfp-nm-actions .search-btn:hover,
+#cfpPickOverlay .cfp-nm-actions .search-btn:hover { background: #ececec !important; border-color: #ececec !important; }
+#cfpPickOverlay .cfp-pick-list { gap: 6px !important; margin-top: 14px !important; }
+#cfpPickOverlay .cfp-pick-row {
+    min-height: 52px !important; box-sizing: border-box !important;
+    align-items: center !important;
+    padding: 10px 10px 10px 14px !important;
+    border-radius: 14px !important;
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(255,255,255,0.07) !important;
+}
+/* rows with and without an Add button come out the same height */
+#cfpPickOverlay .cfp-pick-row .cfp-board-btn { height: 30px !important; padding: 0 14px !important; font-size: 12.5px !important; }
+#cfpPickOverlay .cfp-pick-label { font: 400 13.5px/1.2 var(--nv-font) !important; gap: 10px !important; }
+#cfpPickOverlay .cfp-pick-label i { color: var(--nv-faint) !important; font-size: 11px; }
+#cfpPickOverlay .cfp-pick-sub { font: 300 12px/1.2 var(--nv-font) !important; color: var(--nv-faint) !important; }
+#cfpPickOverlay .cfp-pick-on { font: 300 12px/1 var(--nv-font) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--nv-faint) !important; padding-right: 8px; }
+
+/* single item popup (opened from a board node) */
+#caseItemPopup.case-popup-overlay {
+    background: rgba(4,4,6,0.42) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
+    backdrop-filter: blur(14px) saturate(1.1) !important;
+}
+#caseItemPopup .case-popup-card { background: var(--nv-glass), rgba(14,14,18,0.82) !important; border-radius: 22px !important; box-shadow: var(--nv-spec), 0 40px 100px -30px rgba(0,0,0,0.95) !important; }
+#caseItemPopup .case-popup-header { border-bottom: 1px solid var(--nv-line) !important; }
+#caseItemPopup .case-popup-title { font: 400 17px/1.2 var(--nv-font) !important; }
+#caseItemPopup .case-popup-subtitle { font: 300 12.5px/1.2 var(--nv-font) !important; color: var(--nv-faint) !important; }
+#caseItemPopup .case-popup-close {
+    border-radius: 50% !important;
+    background: var(--nv-glass) !important; border: 1px solid var(--nv-edge) !important; box-shadow: var(--nv-spec) !important;
+}
+#caseItemPopup .case-popup-footer { border-top: 1px solid var(--nv-line) !important; }
+#caseItemPopup .case-popup-footer button {
+    height: 36px; padding: 0 18px !important; border-radius: 999px !important;
+    font: 400 13px/1 var(--nv-font) !important; letter-spacing: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   motion + small screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* items view stacks: keep the notes block compact so the foot never overlaps the list */
+    #caseFolderPopup .cfp-left { max-height: 44vh !important; overflow: hidden; border-right: 0 !important; border-bottom: 1px solid var(--nv-line) !important; }
+    #caseFolderPopup .cfp-notes-area { min-height: 90px !important; padding: 12px 14px !important; }
+    #caseFolderPopup .cfp-left-header,
+    #caseFolderPopup .cfp-right-header { padding: 14px 18px 10px !important; }
+    #caseFolderPopup .cfp-notes-foot { padding: 10px 12px 12px 18px !important; }
+    #caseFolderPopup .cfp-right-body { padding: 4px 14px 24px !important; }
+}
+@media (max-width: 620px) {
+    #caseFolderPopup .cfp-kv,
+    #caseItemPopup .cfp-kv { grid-template-columns: 96px minmax(0, 1fr) auto !important; gap: 10px !important; }
+}
+@media (max-width: 600px) {
+    #caseFolderPopup .cfp-header-icon { display: none !important; }
+    #caseFolderPopup .cfp-seg { padding: 0 13px !important; font-size: 0 !important; gap: 0 !important; }
+    #caseFolderPopup .cfp-seg i { font-size: 12px !important; }
+}
